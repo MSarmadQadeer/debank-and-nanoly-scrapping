@@ -9,13 +9,16 @@
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+    <input type="text" name="" id="" placeholder="Enter Public Address">
+    <button type="button" name="button">Search</button>
 
     {% if results %}
         {% for result in results %}
-            <div>{{ result.protocol }}</div>
+            <div>{{ result }}</div>
         {% endfor %}
     {% endif %}
+
+    <script src="../static/js/script.js"></script>
 </body>
 
 </html>
