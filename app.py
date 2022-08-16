@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from scrapper import getScrappedData
 
 app = Flask(__name__)
@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=["GET"])
 def index():
-    return "<h1>Hello World!</h1>"
+    return render_template("index.html", title="Hello")
+
 
 @app.route('/<publicAddress>')
 def api(publicAddress):
