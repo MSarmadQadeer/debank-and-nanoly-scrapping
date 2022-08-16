@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 def getScrappedData(publicAddress):
     url = f'https://debank.com/profile/{publicAddress}'
-    browser = start_firefox(headless=True)
+    browser = start_firefox(headless=False)
     go_to(url)
     wait_until(S(".db-table-body").exists, timeout_secs=20)
 
