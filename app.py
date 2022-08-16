@@ -1,3 +1,4 @@
+from unittest import result
 from flask import Flask, render_template
 from scrapper import getScrappedData
 
@@ -10,8 +11,9 @@ def index():
 
 
 @app.route('/<publicAddress>')
-def api(publicAddress):
-    return getScrappedData(publicAddress)
+def apiCall(publicAddress):
+    results = getScrappedData(publicAddress)
+    return render_template("index.html", title="API Call", results=results)
 
 
 if __name__ == "__main__":
