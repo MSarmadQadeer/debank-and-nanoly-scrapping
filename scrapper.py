@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 publicAddress = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
 
 url = f'https://debank.com/profile/{publicAddress}'
-browser = start_firefox(headless=False)
+browser = start_firefox(headless=True)
 go_to(url)
 wait_until(S(".db-table-body").exists, timeout_secs=20)
 
