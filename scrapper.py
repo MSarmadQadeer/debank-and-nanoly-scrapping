@@ -8,7 +8,7 @@ publicAddress = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
 
 url = f'https://debank.com/profile/{publicAddress}'
 browser = start_firefox(url, headless=False)
-wait_until(lambda: browser.find_element(By.CLASS_NAME, "db-table-body"))
+wait_until(lambda: browser.find_element(By.CLASS_NAME, "db-table-body"), timeout_secs=20)
 
 soup = BeautifulSoup(browser.page_source, 'html.parser')
 tableRows = soup.select('div.db-table-body .db-table-row')
@@ -26,7 +26,7 @@ browser.quit()
 
 url = f'https://coindix.com/?name={tokensData[0]["token"]}&kind=single&chain=ethereum'
 browser = start_firefox(url, headless=False)
-wait_until(lambda: browser.find_element(By.ID, "xdefivaults"))
+wait_until(lambda: browser.find_element(By.ID, "xdefivaults"), timeout_secs=20)
 
 soup = BeautifulSoup(browser.page_source, 'html.parser')
 tableRows = soup.select('#xdefivaults > tr:nth-child(-n+3)')
