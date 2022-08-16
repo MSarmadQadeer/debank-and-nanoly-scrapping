@@ -2,22 +2,84 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
     <title>{{ title }}</title>
 </head>
 
-<body>
-    <input type="text" name="" id="" placeholder="Enter Public Address">
-    <button type="button" name="button">Search</button>
+<body class="bg-gray-100">
+    <main class="w-[1080px] m-auto bg-white h-full min-h-screen px-40 py-24">
+        <h1 class="font-sans font-bold text-[1.8rem] mb-8 tracking-[0.5px]">Know Your Tokens Best Yields!</h1>
+        <section class="flex items-center gap-2">
+            <input class="border border-solid tracking-[0.6px] border-black px-5 py-2 w-full max-w-[500px] rounded-lg"
+                type="text" placeholder="Enter Public Address" />
+            <button class="bg-teal-500 text-white px-5 py-2 rounded-lg" type="button" name="button">Search</button>
+        </section>
 
-    {% if results %}
-        {% for result in results %}
-            <div>{{ result }}</div>
-        {% endfor %}
-    {% endif %}
+        {% if results %}
+        <section class="">
+            {% for result in results %}
+            <article class="px-8 py-4 my-4 rounded-lg flex flex-col gap-2 bg-teal-100">
+                <div class="flex items-center justify-between">
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Tokens :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.tokens }}</p>
+                    </div>
+
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Rewards :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.rewards }}</p>
+                    </div>
+
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Protocol :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.protocol }}</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Network :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.network }}</p>
+                    </div>
+
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Base :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.base }}</p>
+                    </div>
+
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Reward :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.reward }}</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">APY :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.APY }}</p>
+                    </div>
+
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">TVL :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.TVL }}</p>
+                    </div>
+
+                    <div class="flex gap-4 flex-1">
+                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Risk :</h2>
+                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.risk }}</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 flex-1">
+                    <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Link :</h2>
+                    <a href="{{ result.link }}">{{ result.link }}</a>
+                </div>
+            </article>
+            {% endfor %}
+        </section>
+        {% endif %}
+    </main>
 
     <script src="../static/js/script.js"></script>
 </body>
