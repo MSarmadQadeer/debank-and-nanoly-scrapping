@@ -1,14 +1,14 @@
 from helium import *
 from bs4 import BeautifulSoup
-from selenium.webdriver.common.by import By
 
 # publicAddress = '0xc7f9f7acc3941cc0da9956410d0023fb936a6a09'
 # publicAddress = '0xdac17f958d2ee523a2206206994597c13d831ec7'
 publicAddress = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
 
 url = f'https://debank.com/profile/{publicAddress}'
-browser = start_firefox(url, headless=False)
-wait_until(lambda: browser.find_element(By.CLASS_NAME, "db-table-body"), timeout_secs=20)
+browser = start_firefox(headless=False)
+go_to(url)
+wait_until(S(".db-table-body").exists, timeout_secs=20)
 
 soup = BeautifulSoup(browser.page_source, 'html.parser')
 tableRows = soup.select('div.db-table-body .db-table-row')
@@ -21,12 +21,11 @@ for row in tableRows:
         "value": cells[-1].text,
         "token": tokenName
     })
-browser.quit()
 # print(tokensData)
 
 url = f'https://coindix.com/?name={tokensData[0]["token"]}&kind=single&chain=ethereum'
-browser = start_firefox(url, headless=False)
-wait_until(lambda: browser.find_element(By.ID, "xdefivaults"), timeout_secs=20)
+go_to(url)
+wait_until(S("#xdefivaults").exists, timeout_secs=20)
 
 soup = BeautifulSoup(browser.page_source, 'html.parser')
 tableRows = soup.select('#xdefivaults > tr:nth-child(-n+3)')
@@ -68,5 +67,5 @@ for row in tableRows:
     # print(row.prettify())
     # print('\n')
 
-browser.quit()
+kill_browser()
 print(results)
