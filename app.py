@@ -9,7 +9,7 @@ def index():
     return render_template("index.html", title="Home Screen")
 
 
-@app.route('/<publicAddress>')
+@app.route('/api/<publicAddress>')
 def apiCall(publicAddress):
     results = getScrappedData(publicAddress)
     return render_template("index.html", title="Results Screen", results=results)
