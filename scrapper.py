@@ -10,7 +10,7 @@ def getScrappedData(publicAddress):
     url = f'https://debank.com/profile/{publicAddress}'
     browser = start_firefox(headless=True)
     go_to(url)
-    wait_until(S(".db-table-body").exists, timeout_secs=20)
+    wait_until(S(".db-table-body").exists, timeout_secs=60)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     tableRows = soup.select('div.db-table-body .db-table-row')
