@@ -1,87 +1,769 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../static/images/favicon.ico">
+    <!-- Bootstrap -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="../static/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <!-- Slider -->               
+    <link rel="stylesheet" href="../static/css/tiny-slider.css"/> 
+    <!-- Main Css -->
+    <link href="../static/css/theme.css" rel="stylesheet" type="text/css" id="theme-opt" />
+    <link href="../static/css/colors/slateblue.css" rel="stylesheet" id="color-opt">
+
     <title>{{ title }}</title>
 </head>
+<body>
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader -->
+    
+    <!-- Navbar STart -->
+    <header id="topnav" class="defaultscroll sticky">
+        <div class="container">
+            <!-- Logo container-->
+            <a class="logo" href="index.html">
+                <span class="logo-light-mode">
+                    <img src="../static/images/logo-dark.png" class="l-dark" height="24" alt="">
+                    <img src="../static/images/logo-light.png" class="l-light" height="24" alt="">
+                </span>
+                <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+            </a>
 
-<body class="bg-gray-100">
-    <main class="w-[1080px] m-auto bg-white h-full min-h-screen px-40 py-24">
-        <h1 class="font-sans font-bold text-[1.8rem] mb-8 tracking-[0.5px]">Know Your Tokens Best Yields!</h1>
-        <section class="flex items-center gap-2">
-            <input class="border border-solid tracking-[0.6px] border-black px-5 py-2 w-full max-w-[500px] rounded-lg"
-                type="text" placeholder="Enter Public Address" />
-            <button class="bg-teal-500 text-white px-5 py-2 rounded-lg" type="button" name="button">Search</button>
-        </section>
+            <!-- End Logo container-->
+            <div class="menu-extras">
+                <div class="menu-item">
+                    <!-- Mobile menu toggle-->
+                    <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </div>
+            </div>
 
+            <!--Login button Start-->
+            <ul class="buy-button list-inline mb-0">
+                <li class="list-inline-item mb-0">
+                    <a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <div class="login-btn-primary"><span class="btn btn-icon btn-pills btn-soft-primary"><i data-feather="settings" class="fea icon-sm"></i></span></div>
+                        <div class="login-btn-light"><span class="btn btn-icon btn-pills btn-light"><i data-feather="settings" class="fea icon-sm"></i></span></div>
+                    </a>
+                </li>
+            </ul>
+            <!--Login button End-->
+    
+            <div id="navigation">
+                <!-- Navigation Menu-->   
+                <ul class="navigation-menu nav-light nav-right">
+                    <li><a href="index-crypto.html" class="sub-menu-item">Home</a></li>
+                    <li><a href="crypto-about.html" class="sub-menu-item"> About Us</a></li>
+                    <li><a href="crypto-market.html" class="sub-menu-item">Market</a></li>
+                    <li><a href="crypto-token.html" class="sub-menu-item"> Token</a></li>
+                    <li class="has-submenu parent-parent-menu-item me-5">
+                        <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                        <ul class="submenu">
+                            <li><a href="crypto-services.html" class="sub-menu-item"> Features</a></li>
+                            <li><a href="crypto-faqs.html" class="sub-menu-item">FAQs </a></li>
+                            <li><a href="crypto-whitepaper.html" class="sub-menu-item">Whitepaper </a></li>
+                            <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Blog </a><span class="submenu-arrow"></span>
+                                <ul class="submenu">
+                                    <li><a href="crypto-blog.html" class="sub-menu-item"> Blog </a></li>
+                                    <li><a href="crypto-blog-detail.html" class="sub-menu-item">Blog Detail</a></li>
+                                </ul> 
+                            </li>
+                            <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Auth pages </a><span class="submenu-arrow"></span>
+                                <ul class="submenu">
+                                    <li><a href="auth-bs-login.html" class="sub-menu-item">Login</a></li>
+                                    <li><a href="auth-bs-signup.html" class="sub-menu-item">Signup</a></li>
+                                    <li><a href="auth-bs-reset.html" class="sub-menu-item">Reset Password</a></li>
+                                </ul> 
+                            </li>
+                        </ul>
+                    </li>
+                </ul><!--end navigation menu-->
+            </div><!--end navigation-->
+        </div><!--end container-->
+    </header><!--end header-->
+    <!-- Navbar End -->
+    
+    <!-- Hero Start -->
+    <section class="bg-half-260 bg-light bg-animation-left crypto-home d-table w-100">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="row mt-5 mt-sm-0 justify-content-center">
+                <div class="col-lg-10">
+                    <div class="title-heading text-center">
+                        <img src="../static/images/crypto/crypto.svg" height="136" class="mover" alt="">
+                        <h1 class="heading text-primary text-shadow-title mt-4 mb-3">Know Your Tokens Best Yields!</h1>
+                    </div>
+                    <div class="text-center subcribe-form mt-4 pt-2">
+                        <form action="/apiCall" method="get">
+                            <input type="text" id="public-address" name="public-address" class="rounded-pill bg-white-50 border" placeholder="Enter Public Address :" value="{{ publicAddress }}">
+                            <button type="submit" class="btn btn-pills btn-primary">Submit <i class="uil uil-arrow-right"></i></button>
+                        </form><!--end form-->
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container--> 
+    </section><!--end section-->
+    <!-- Hero End -->
+
+    <!-- FEATURES START -->
+    <section class="section border-top">
         {% if results %}
-        <section class="">
-            {% for result in results %}
-            <article class="px-8 py-4 my-4 rounded-lg flex flex-col gap-2 bg-teal-100">
-                <div class="flex items-center justify-between">
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Tokens :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.tokens }}</p>
+        <!-- Table Start -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="table-responsive features-absolute bg-white shadow-md rounded-md">
+                        <table class="table mb-0 table-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="fw-normal border-bottom text-muted py-4 px-3" style="min-width: 250px;">Token</th>
+                                    <th scope="col" class="fw-normal border-bottom text-muted py-4 px-3" style="width: 150px;">Base</th>
+                                    <th scope="col" class="fw-normal border-bottom text-muted py-4 px-3" style="width: 150px;">APY</th>
+                                    <th scope="col" class="fw-normal border-bottom text-muted py-4 px-3" style="width: 150px;">TVL</th>
+                                    <th scope="col" class="fw-normal border-bottom text-muted py-4 px-3" style="width: 150px;">Risk</th>
+                                    <th scope="col" class="fw-normal border-bottom text-muted py-4 px-3 text-end" style="width: 100px;">Link</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for result in results %}  
+                                <tr>
+                                    <th class="p-3">
+                                        <div class="align-items-center">
+                                            <img src="../static/images/crypto/ethereum.png" class="me-3" height="32" alt="">
+                                            <p class="mt-2 d-inline fw-normal h6">Ethereum <span class="text-muted">{{ result.tokens[0] }}</span> </p>
+                                        </div>
+                                    </th>
+                                    <td class="p-3">{{ result.base }}</td>
+                                    <td class="text-success p-3">{{ result.APY }}</td>
+                                    <td class="text-success p-3">{{ result.TVL }}</td>
+                                    <td class="text-muted p-3">{{ result.risk }}</td>
+                                    <td class="p-3 text-end"><a href="{{ result.link }}" class="btn btn-sm btn-primary">Trade</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table><!--end table-->
                     </div>
 
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Rewards :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.rewards }}</p>
+                    <div class="text-center mt-4">
+                        <a class="text-muted" href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            Contact Advisor <i class="uil uil-arrow-right"></i>
+                        </a>
                     </div>
-
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Protocol :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.protocol }}</p>
-                    </div>
-                </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Network :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.network }}</p>
-                    </div>
-
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Base :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.base }}</p>
-                    </div>
-
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Reward :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.reward }}</p>
-                    </div>
-                </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">APY :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.APY }}</p>
-                    </div>
-
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">TVL :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.TVL }}</p>
-                    </div>
-
-                    <div class="flex gap-4 flex-1">
-                        <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Risk :</h2>
-                        <p class="text-[1.2rem] tracking-[0.5px]">{{ result.risk }}</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4 flex-1">
-                    <h2 class="font-sans font-semibold text-[1.2rem] tracking-[0.5px]">Link :</h2>
-                    <a href="{{ result.link }}">{{ result.link }}</a>
-                </div>
-            </article>
-            {% endfor %}
-        </section>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+        <!-- Table End -->
         {% endif %}
-    </main>
 
-    <script src="../static/js/script.js"></script>
+        <!-- Process Start -->
+        <div class="container mt-100 mt-60">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">How it works ?</h4>
+                        <p class="text-muted para-desc mb-0 mx-auto">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-md-3 col-12 mt-4 pt-2">
+                    <div class="text-center">
+                        <div class="rounded p-4 shadow">
+                            <a href="javascript:void(0)"><img src="../static/images/crypto/1.png" height="100" class="mx-auto d-block" alt=""></a>
+                        </div>
+
+                        <div class="mt-3">
+                            <h5><a href="javascript:void(0)" class="text-primary">Create Account</a></h5>
+                            <p class="text-muted mb-0">Earn upto 10%</p>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-md-3 col-12 mt-4 pt-2">
+                    <div class="text-center">
+                        <div class="rounded p-4 shadow">
+                            <a href="javascript:void(0)"><img src="../static/images/crypto/2.png" height="100" class="mx-auto d-block" alt=""></a>
+                        </div>
+
+                        <div class="mt-3">
+                            <h5><a href="javascript:void(0)" class="text-primary">Buy Coin</a></h5>
+                            <p class="text-muted mb-0">Save upto $50/coin</p>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-md-3 col-12 mt-4 pt-2">
+                    <div class="text-center">
+                        <div class="rounded p-4 shadow">
+                            <a href="javascript:void(0)"><img src="../static/images/crypto/3.png" height="100" class="mx-auto d-block" alt=""></a>
+                        </div>
+
+                        <div class="mt-3">
+                            <h5><a href="javascript:void(0)" class="text-primary">Loans</a></h5>
+                            <p class="text-muted mb-0">Use crypto as collateral</p>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-md-3 col-12 mt-4 pt-2">
+                    <div class="text-center">
+                        <div class="rounded p-4 shadow">
+                            <a href="javascript:void(0)"><img src="../static/images/crypto/4.png" height="100" class="mx-auto d-block" alt=""></a>
+                        </div>
+
+                        <div class="mt-3">
+                            <h5><a href="javascript:void(0)" class="text-primary">Credit & Debit Cards</a></h5>
+                            <p class="text-muted mb-0">Payments with cards</p>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+        <!-- Process End -->
+    </section><!--end section-->
+    <!-- Section END -->     
+    
+    <!-- Counter Start -->
+    <section class="section-two bg-primary bg-gradient">
+        <div class="container">
+            <div class="row" id="counter">
+                <div class="col-md-4">
+                    <div class="counter-box text-center">
+                        <h2 class="mb-0 mt-3 title-dark display-4 text-white">$ <span class="counter-value" data-target="9706873">56343</span></h2>
+                        <h5 class="counter-head title-dark text-light">Exchanged</h5>
+                    </div><!--end counter box-->
+                </div>
+
+                <div class="col-md-4 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                    <div class="counter-box text-center">
+                        <h2 class="mb-0 mt-3 title-dark display-4 text-white"><span class="counter-value" data-target="106">23</span></h2>
+                        <h5 class="counter-head title-dark text-light">Countries</h5>
+                    </div><!--end counter box-->
+                </div>
+
+                <div class="col-md-4 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                    <div class="counter-box text-center">
+                        <h2 class="mb-0 mt-3 title-dark display-4 text-white"><span class="counter-value" data-target="56043">6483</span></h2>
+                        <h5 class="counter-head title-dark text-light">Customers</h5>
+                    </div><!--end counter box-->
+                </div>
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <!-- Counter End -->
+
+    <!-- Section start -->
+    <section class="section">
+        <!-- Crypto Portfolio end -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">Create your cryptocurrency portfolio today</h4>
+                        <p class="text-muted para-desc mb-0 mx-auto">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-12 mt-4 pt-2">
+                    <img src="../static/images/crypto/portfolio.png" class="img-fluid mx-auto d-block" alt="">
+                </div><!--end col-->
+
+                <div class="col-md-4 col-12 mt-4">
+                    <div class="card border-0 text-center features feature-primary feature-clean p-4">
+                        <div class="icons text-center mx-auto">
+                            <i class="uil uil-shield-check d-block rounded h3 mb-0"></i>
+                        </div>
+
+                        <div class="card-body p-0 mt-4">
+                            <h5>Fully Secured</h5>
+                            <p class="text-muted mb-0">Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.</p>
+                            <div class="mt-2">
+                                <a href="javascript:void(0)" class="read-more">Read More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right fea icon-sm"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-md-4 col-12 mt-4">
+                    <div class="card border-0 text-center features feature-primary feature-clean p-4">
+                        <div class="icons text-center mx-auto">
+                            <i class="uil uil-newspaper d-block rounded h3 mb-0"></i>
+                        </div>
+
+                        <div class="card-body p-0 mt-4">
+                            <h5>Protected by insurance</h5>
+                            <p class="text-muted mb-0">Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.</p>
+                            <div class="mt-2">
+                                <a href="javascript:void(0)" class="read-more">Read More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right fea icon-sm"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-md-4 col-12 mt-4">
+                    <div class="card border-0 text-center features feature-primary feature-clean p-4">
+                        <div class="icons text-center mx-auto">
+                            <i class="uil uil-browser d-block rounded h3 mb-0"></i>
+                        </div>
+
+                        <div class="card-body p-0 mt-4">
+                            <h5>Industry best practices</h5>
+                            <p class="text-muted mb-0">Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.</p>
+                            <div class="mt-2">
+                                <a href="javascript:void(0)" class="read-more">Read More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right fea icon-sm"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+        <!-- Crypto Portfolio end -->
+
+        <!-- Rate Start -->
+        <div class="container mt-100 mt-60">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-6 col-12">
+                    <div class="p-4 text-center rounded bg-light shadow">
+                        <h4 class="mb-0"><span class="text-warning">1 BTC</span> = $ 8654.32</h4>
+                    </div>
+
+                    <div class="mt-4 pt-2 text-center">
+                        <a href="javascript:void"><img src="../static/images/crypto/bitcoin.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Bitcoin" alt=""></a>
+                        <a href="javascript:void"><img src="../static/images/crypto/coinye.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Coinye" alt=""></a>
+                        <a href="javascript:void"><img src="../static/images/crypto/ethereum.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Ethereum" alt=""></a>
+                        <a href="javascript:void"><img src="../static/images/crypto/litecoin.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Litecoin" alt=""></a>
+                        <a href="javascript:void"><img src="../static/images/crypto/monero.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Monero" alt=""></a>
+                        <a href="javascript:void"><img src="../static/images/crypto/auroracoin.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Auroracoin" alt=""></a>
+                        <a href="javascript:void"><img src="../static/images/crypto/potcoin.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Potcoin" alt=""></a>
+                        <a href="javascript:void"><img src="../static/images/crypto/zcash.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Zcash" alt=""></a>
+                    </div>
+
+                    <div class="card border-0 shadow rounded p-4 bg-light overflow-hidden mt-4">
+                        <h5 class="text-center mb-0">Live Cryptocurrency Calculator</h5>
+
+                        <div class="calculator-block mt-4">  
+                            <div class="calculator-body">  
+                                <script src="https://www.cryptonator.com/ui/js/widget/calc_widget.js"></script>  
+                            </div>  
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-7 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div class="ms-lg-4">
+                        <div class="section-title mb-4 pb-2">
+                            <h4 class="title mb-4">Frequently asked questions</h4>
+                            <p class="text-muted para-desc mb-0">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                        </div>
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item rounded">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        How does it work ?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body text-muted bg-white">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item rounded mt-2">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Do I need a designer to use Landrick ?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse border-0 collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body text-muted bg-white">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item rounded mt-2">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        What do I need to do to start selling ?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse border-0 collapse" aria-labelledby="headingThree"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body text-muted bg-white">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item rounded mt-2">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        What happens when I receive an order ?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse border-0 collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body text-muted bg-white">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end row-->
+        </div><!--end container-->
+        <!-- Rate End -->
+
+        <!-- Testi Start -->
+        <div class="container mt-100 mt-60">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">Buyer's Review</h4>
+                        <p class="text-muted para-desc mb-0 mx-auto">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9 mt-4 pt-2 text-center">
+                    <div class="tiny-single-item">
+                        <div class="tiny-slide client-testi text-center">
+                            <p class="text-muted h6 fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. "</p>
+                            <img src="../static/images/client/01.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
+                            <ul class="list-unstyled mb-0 mt-3">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <h6 class="text-primary">- Thomas Israel <small class="text-muted">C.E.O</small></h6>
+                        </div><!--end customer testi-->
+                        
+                        <div class="tiny-slide client-testi text-center">
+                            <p class="text-muted h6 fst-italic">" The advantage of its Latin origin and the relative meaninglessness of Lorum Ipsum is that the text does not attract attention to itself or distract the viewer's attention from the layout. "</p>
+                            <img src="../static/images/client/02.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
+                            <ul class="list-unstyled mb-0 mt-3">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <h6 class="text-primary">- Carl Oliver <small class="text-muted">P.A</small></h6>
+                        </div><!--end customer testi-->
+                        
+                        <div class="tiny-slide client-testi text-center">
+                            <p class="text-muted h6 fst-italic">" There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space. These alternatives to the classic Lorem Ipsum texts are often amusing and tell short, funny or nonsensical stories. "</p>
+                            <img src="../static/images/client/03.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
+                            <ul class="list-unstyled mb-0 mt-3">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <h6 class="text-primary">- Barbara McIntosh <small class="text-muted">M.D</small></h6>
+                        </div><!--end customer testi-->
+                        
+                        <div class="tiny-slide client-testi text-center">
+                            <p class="text-muted h6 fst-italic">" According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero in 45 BC. Allegedly, a Latin scholar established the origin of the text by compiling all the instances of the unusual word 'consectetur' he could find "</p>
+                            <img src="../static/images/client/04.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
+                            <ul class="list-unstyled mb-0 mt-3">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <h6 class="text-primary">- Christa Smith <small class="text-muted">Manager</small></h6>
+                        </div><!--end customer testi-->
+                        
+                        <div class="tiny-slide client-testi text-center">
+                            <p class="text-muted h6 fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. "</p>
+                            <img src="../static/images/client/05.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
+                            <ul class="list-unstyled mb-0 mt-3">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <h6 class="text-primary">- Dean Tolle <small class="text-muted">Developer</small></h6>
+                        </div><!--end customer testi-->
+                        
+                        <div class="tiny-slide client-testi text-center">
+                            <p class="text-muted h6 fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "</p>
+                            <img src="../static/images/client/06.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
+                            <ul class="list-unstyled mb-0 mt-3">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <h6 class="text-primary">- Jill Webb <small class="text-muted">Designer</small></h6>
+                        </div><!--end customer testi-->
+                    </div><!--end owl carousel-->
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+        <!-- Testi End -->
+    </section><!--end section-->
+    <!-- Section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="section-title">
+                            <div class="d-flex">
+                                <i class="uil uil-mobile-android display-4 text-white title-dark"></i>
+                                <div class="flex-1 ms-md-4 ms-3">
+                                    <h4 class="fw-medium text-light title-dark mb-1">Download our app now !</h4>
+                                    <p class="text-white-50 mb-0">Install our Landrick app and grow your portfolio with Landrick and earn more n more !</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mt-4 mt-sm-0">
+                        <div class="text-md-end ms-5 ms-sm-0">
+                            <a href="javascript:void(0)" class="btn btn-primary m-1"><i class="uil uil-apple"></i> App Store</a>
+                            <a href="javascript:void(0)" class="btn btn-soft-primary m-1"><i class="uil uil-google-play"></i> Play Store</a>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </div><!--end div-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-py-60 footer-border">
+                        <div class="row">
+                            <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                                <a href="#" class="logo-footer">
+                                    <img src="../static/images/logo-light.png" height="24" alt="">
+                                </a>
+                                <p class="mt-4">Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
+                                </ul><!--end icon-->
+                            </div><!--end col-->
+                            
+                            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                <h5 class="footer-head">Company</h5>
+                                <ul class="list-unstyled footer-list mt-4">
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> About us</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Services</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Team</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Pricing</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Project</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Careers</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Blog</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Login</a></li>
+                                </ul>
+                            </div><!--end col-->
+                            
+                            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                <h5 class="footer-head">Usefull Links</h5>
+                                <ul class="list-unstyled footer-list mt-4">
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Terms of Services</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Privacy Policy</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Documentation</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Changelog</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Components</a></li>
+                                </ul>
+                            </div><!--end col-->
+        
+                            <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                <h5 class="text-light footer-head">Start trading with Landrick</h5>
+
+                                <ul class="list-unstyled footer-list mt-4 mb-2">
+                                    <li class="list-inline-item mx-1"><a href="auth-bs-login.html" class="btn btn-soft-primary">Signin</a></li>
+                                    <li class="list-inline-item mx-1"><a href="auth-bs-signup.html" class="btn btn-primary">Signup</a></li>
+                                </ul>
+                                <small class="d-block">Institutional Investor ? <a href="#" class="text-foot fw-medium">Learn More <i class="uil uil-arrow-right"></i></a></small>
+
+                                <img src="../static/images/logo-icon.png" class="avatar avatar-small mt-4" alt="">
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+
+        <div class="footer-py-30 footer-bar">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="text-sm-start">
+                            <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Landrick. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <ul class="list-unstyled text-sm-end mb-0">
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/american-ex.png" class="avatar avatar-ex-sm" title="American Express" alt=""></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/discover.png" class="avatar avatar-ex-sm" title="Discover" alt=""></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/master-card.png" class="avatar avatar-ex-sm" title="Master Card" alt=""></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/paypal.png" class="avatar avatar-ex-sm" title="Paypal" alt=""></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/visa.png" class="avatar avatar-ex-sm" title="Visa" alt=""></a></li>
+                        </ul>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </div>
+    </footer><!--end footer-->
+    <!-- Footer End -->
+
+    <!-- Offcanvas Start -->
+    <div class="offcanvas offcanvas-end bg-white shadow" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header p-4 border-bottom">
+            <h5 id="offcanvasRightLabel" class="mb-0">
+                <img src="../static/images/logo-dark.png" height="24" class="light-version" alt="">
+                <img src="../static/images/logo-light.png" height="24" class="dark-version" alt="">
+            </h5>
+            <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="offcanvas" aria-label="Close"><i class="uil uil-times fs-4"></i></button>
+        </div>
+        <div class="offcanvas-body p-4">
+            <div class="row">
+                <div class="col-12">
+                    <img src="../static/images/contact.svg" class="img-fluid d-block mx-auto" style="max-width: 256px;" alt="">
+                    <div class="card border-0 mt-5" style="z-index: 1">
+                        <div class="card-body p-0">
+                            <form method="post" name="myForm" onsubmit="return validateForm()" action="/sendMail">
+                                <p id="error-msg" class="mb-0"></p>
+                                <div id="simple-msg"></div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Name</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="user" class="fea icon-sm icons"></i>
+                                                <input name="name" type="text" class="form-control ps-5" placeholder="Name :">
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Email</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                <input name="email" type="email" class="form-control ps-5" placeholder="Email :">
+                                            </div>
+                                        </div> 
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Contact</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="phone" class="fea icon-sm icons"></i>
+                                                <input name="contact-number" type="number" class="form-control ps-5" placeholder="Contact :">
+                                            </div>
+                                        </div> 
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Public Address</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="map-pin" class="fea icon-sm icons"></i>
+                                                <input name="public-address" class="form-control ps-5" placeholder="Public Address :" value="{{ publicAddress }}">
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Subject</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="book" class="fea icon-sm icons"></i>
+                                                <input name="subject" id="subject" class="form-control ps-5" placeholder="subject :">
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Message <span class="text-danger">*</span></label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="message-circle" class="fea icon-sm icons clearfix"></i>
+                                                <textarea name="message" rows="4" class="form-control ps-5" placeholder="Message :"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-grid">
+                                            <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div>
+    </div>
+    <!-- Offcanvas End -->
+
+    <!-- Back to top -->
+    <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
+    <!-- Back to top -->
+
+    <!-- javascript -->
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <!-- SLIDER -->
+    <script src="../static/js/tiny-slider.js"></script>
+    <!-- Icons -->
+    <script src="../static/js/feather.min.js"></script>
+    <!-- Main Js -->
+    <script src="../static/js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
+    <script src="../static/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
 </body>
-
 </html>
