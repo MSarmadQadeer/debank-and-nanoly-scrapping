@@ -25,13 +25,14 @@ def getScrappedData(publicAddress):
         })
     # print(tokensData)
 
-    url = f'https://coindix.com/?name={tokensData[0]["token"]}&kind=single&chain=ethereum'
+    # url = f'https://coindix.com/?name={tokensData[0]["token"]}&kind=single&chain=ethereum'
+    url = f'https://nanoly.com/ethereum-kind:single-name:{tokensData[0]["token"]}'
     go_to(url)
     wait_until(S("#xdefivaults").exists, timeout_secs=20)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     tableRows = soup.select('#xdefivaults > tr:nth-child(-n+3)')
-
+    
     results = []
     for row in tableRows:
         tds = row.select('td')
@@ -41,9 +42,9 @@ def getScrappedData(publicAddress):
         for tokenElement in tokenElements:
             if tokenElement.text != "":
                 result["tokens"].append(tokenElement.text)
-
-        result["protocol"] = tds[2].select('div:first-child > div')[0].text
-        result["network"] = tds[2].select('div:first-child > div')[1].text
+                
+        result["protocol"] = tds[2].select('a > div')[0].text
+        result["network"] = tds[2].select('a > div')[1].text
         result["base"] = tds[3].text
         result["reward"] = tds[4].text
 
@@ -62,8 +63,7 @@ def getScrappedData(publicAddress):
         else:
             result["risk"] = "high"
 
-        linkDiv = tds[10].select('div:first-child')[0]
-        result["link"] = linkDiv["onclick"][11:-2]
+        result["link"] = tds[10].select('a')[0]["href"]
 
         results.append(result)
         # print(row.prettify())
