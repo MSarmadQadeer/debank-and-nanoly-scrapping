@@ -38,7 +38,7 @@ def getScrappedData(publicAddress):
         tds = row.select('td')
 
         result = {"tokens": [], "rewards": []}
-        tokenElements = tds[1].select('div:first-child > div > div')
+        tokenElements = tds[1].select('a:first-child > div > div')
         for tokenElement in tokenElements:
             if tokenElement.text != "":
                 result["tokens"].append(tokenElement.text)
