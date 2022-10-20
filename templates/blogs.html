@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../static/images/favicon.ico">
+    <!-- Bootstrap -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="../static/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <!-- Slider -->               
+    <link rel="stylesheet" href="../static/css/tobii.min.css"/> 
+    <!-- Main Css -->
+    <link href="../static/css/theme.css" rel="stylesheet" type="text/css" id="theme-opt" />
+    <link href="../static/css/colors/slateblue.css" rel="stylesheet" id="color-opt">
+
+    <title>{{ title }}</title>
+</head>
+<body>
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader -->
+    
+    <!-- Navbar STart -->
+    <header id="topnav" class="defaultscroll sticky bg-white">
+        <div class="container">
+            <!-- Logo container-->
+            <a class="logo" href="/">
+                <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
+                <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+            </a>
+
+            <!-- End Logo container-->
+            <div class="menu-extras">
+                <div class="menu-item">
+                    <!-- Mobile menu toggle-->
+                    <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </div>
+            </div>
+
+            <!--Login button Start-->
+            <ul class="buy-button list-inline mb-0">
+                <li class="list-inline-item mb-0">
+                    <a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <div class="login-btn-primary"><span class="btn btn-icon btn-pills btn-soft-primary"><i data-feather="settings" class="fea icon-sm"></i></span></div>
+                        <div class="login-btn-light"><span class="btn btn-icon btn-pills btn-light"><i data-feather="settings" class="fea icon-sm"></i></span></div>
+                    </a>
+                </li>
+            </ul>
+            <!--Login button End-->
+    
+            <div id="navigation">
+                <!-- Navigation Menu-->   
+                <ul class="navigation-menu nav-right">
+                    <li><a href="index-crypto.html" class="sub-menu-item">Home</a></li>
+                    <li><a href="crypto-about.html" class="sub-menu-item"> About Us</a></li>
+                    <li><a href="crypto-market.html" class="sub-menu-item">Market</a></li>
+                    <li><a href="crypto-token.html" class="sub-menu-item"> Token</a></li>
+                    <li class="has-submenu parent-parent-menu-item me-5">
+                        <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                        <ul class="submenu">
+                            <li><a href="/blogs" class="sub-menu-item">Blogs</a></li>
+                            <li><a href="crypto-faqs.html" class="sub-menu-item">News</a></li>
+                        </ul>
+                    </li>
+                </ul><!--end navigation menu-->
+            </div><!--end navigation-->
+        </div><!--end container-->
+    </header><!--end header-->
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <section class="home-slider position-relative">
+        <div class="bg-home-75vh d-flex align-items-center" style="background: url('../static/images/blog/bg2.jpg') center center;">
+            <div class="bg-overlay"></div>
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
+                    <div class="col-12">
+                        <div class="title-heading text-center">
+                            <h2 class="text-white title-dark mb-3">Cryptocurrency Investing</h2>
+                            <ul class="list-unstyled">
+                                <li class="list-inline-item small user text-light me-2"><i class="uil uil-user text-white title-dark"></i> Meghan Gardler</li>
+                                <li class="list-inline-item small date text-light"><i class="uil uil-calendar-alt text-white title-dark"></i> October 26,2020</li>
+                            </ul>
+                            <p class="para-desc mx-auto text-white-50 mb-0">If you ask someone if they know what Bitcoin is, they will probably say yes. But if you ask them to explain it, they may suddenly remember an appointment they have to get to immediately.</p>
+                            <div class="mt-4">
+                                <a href="/blogs/cryptocurrency-investing-beginners-guide" class="btn btn-primary">Read More </a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div>
+        </div>
+    </section><!--end section-->
+    <!-- Hero End -->
+
+    <section class="section">
+        <div class="container mt-4 mt-lg-0">
+            <div class="row align-items-center mb-4 pb-2">
+                <div class="col-md-8">
+                    <div class="section-title text-center text-md-start">
+                        <h4 class="mb-4">Popular post</h4>
+                        <p class="text-muted mb-0 para-desc">Popular posts from <span class="text-primary fw-bold">Level Capital</span></p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                    <div class="card blog blog-primary rounded border-0 shadow overflow-hidden">
+                        <div class="position-relative">
+                            <img src="../static/images/crypto-blog-image.jpg" class="card-img-top" alt="...">
+                            <div class="overlay rounded-top"></div>
+                        </div>
+                        <div class="card-body content">
+                            <h5><a href="javascript:void(0)" class="card-title title text-dark">Cryptocurrency Investing : A Beginner's Guide</a></h5>
+                            <div class="post-meta d-flex justify-content-between mt-3">
+                                <a href="/blogs/cryptocurrency-investing-beginners-guide" class="text-muted readmore">Read More <i class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                        <div class="author">
+                            <small class="text-light user d-block"><i class="uil uil-user"></i> Meghan Gardler</small>
+                            <small class="text-light date"><i class="uil uil-calendar-alt"></i> October 26,2020</small>
+                        </div>
+                    </div>
+                </div><!--end col-->
+                
+            </div><!--end row-->
+        </div><!--end container-->
+
+    </section><!--end section-->
+    <!-- End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="section-title">
+                            <div class="d-flex">
+                                <i class="uil uil-mobile-android display-4 text-white title-dark"></i>
+                                <div class="flex-1 ms-md-4 ms-3">
+                                    <h4 class="fw-medium text-light title-dark mb-1">Download our app now !</h4>
+                                    <p class="text-white-50 mb-0">Install our Landrick app and grow your portfolio with Landrick and earn more n more !</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mt-4 mt-sm-0">
+                        <div class="text-md-end ms-5 ms-sm-0">
+                            <a href="javascript:void(0)" class="btn btn-primary m-1"><i class="uil uil-apple"></i> App Store</a>
+                            <a href="javascript:void(0)" class="btn btn-soft-primary m-1"><i class="uil uil-google-play"></i> Play Store</a>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </div><!--end div-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-py-60 footer-border">
+                        <div class="row">
+                            <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                                <a href="#" class="logo-footer">
+                                    <img src="../static/images/logo-light.png" height="24" alt="">
+                                </a>
+                                <p class="mt-4">Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
+                                </ul><!--end icon-->
+                            </div><!--end col-->
+                            
+                            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                <h5 class="footer-head">Company</h5>
+                                <ul class="list-unstyled footer-list mt-4">
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> About us</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Services</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Team</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Pricing</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Project</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Careers</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Blog</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Login</a></li>
+                                </ul>
+                            </div><!--end col-->
+                            
+                            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                <h5 class="footer-head">Usefull Links</h5>
+                                <ul class="list-unstyled footer-list mt-4">
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Terms of Services</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Privacy Policy</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Documentation</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Changelog</a></li>
+                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Components</a></li>
+                                </ul>
+                            </div><!--end col-->
+        
+                            <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                <h5 class="text-light footer-head">Start trading with Landrick</h5>
+
+                                <ul class="list-unstyled footer-list mt-4 mb-2">
+                                    <li class="list-inline-item mx-1"><a href="auth-bs-login.html" class="btn btn-soft-primary">Signin</a></li>
+                                    <li class="list-inline-item mx-1"><a href="auth-bs-signup.html" class="btn btn-primary">Signup</a></li>
+                                </ul>
+                                <small class="d-block">Institutional Investor ? <a href="#" class="text-foot fw-medium">Learn More <i class="uil uil-arrow-right"></i></a></small>
+
+                                <img src="../static/images/logo-icon.png" class="avatar avatar-small mt-4" alt="">
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+
+        <div class="footer-py-30 footer-bar">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="text-sm-start">
+                            <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Landrick. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <ul class="list-unstyled text-sm-end mb-0">
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/american-ex.png" class="avatar avatar-ex-sm" title="American Express" alt=""></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/discover.png" class="avatar avatar-ex-sm" title="Discover" alt=""></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/master-card.png" class="avatar avatar-ex-sm" title="Master Card" alt=""></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/paypal.png" class="avatar avatar-ex-sm" title="Paypal" alt=""></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/visa.png" class="avatar avatar-ex-sm" title="Visa" alt=""></a></li>
+                        </ul>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </div>
+    </footer><!--end footer-->
+    <!-- Footer End -->
+
+    
+    <!-- Offcanvas Start -->
+    <div class="offcanvas offcanvas-end bg-white shadow" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header p-4 border-bottom">
+            <h5 id="offcanvasRightLabel" class="mb-0">
+                <img src="../static/images/logo-dark.png" height="24" class="light-version" alt="">
+                <img src="../static/images/logo-light.png" height="24" class="dark-version" alt="">
+            </h5>
+            <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="offcanvas" aria-label="Close"><i class="uil uil-times fs-4"></i></button>
+        </div>
+        <div class="offcanvas-body p-4">
+            <div class="row">
+                <div class="col-12">
+                    <img src="../static/images/contact.svg" class="img-fluid d-block mx-auto" style="max-width: 256px;" alt="">
+                    <div class="card border-0 mt-5" style="z-index: 1">
+                        <div class="card-body p-0">
+                            <form method="post" name="myForm" onsubmit="return validateForm()" action="/sendMail">
+                                <p id="error-msg" class="mb-0"></p>
+                                <div id="simple-msg"></div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Name</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="user" class="fea icon-sm icons"></i>
+                                                <input name="name" type="text" class="form-control ps-5" placeholder="Name :">
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Email</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                <input name="email" type="email" class="form-control ps-5" placeholder="Email :">
+                                            </div>
+                                        </div> 
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Contact</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="phone" class="fea icon-sm icons"></i>
+                                                <input name="contact-number" type="number" class="form-control ps-5" placeholder="Contact :">
+                                            </div>
+                                        </div> 
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Public Address</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="map-pin" class="fea icon-sm icons"></i>
+                                                <input name="public-address" class="form-control ps-5" placeholder="Public Address :" value="{{ publicAddress }}">
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Subject</label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="book" class="fea icon-sm icons"></i>
+                                                <input name="subject" id="subject" class="form-control ps-5" placeholder="subject :">
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Message <span class="text-danger">*</span></label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="message-circle" class="fea icon-sm icons clearfix"></i>
+                                                <textarea name="message" rows="4" class="form-control ps-5" placeholder="Message :"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-grid">
+                                            <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div>
+    </div>
+    <!-- Offcanvas End -->
+
+    <!-- Back to top -->
+    <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
+    <!-- Back to top -->
+
+    <!-- javascript -->
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <!-- SLIDER -->
+    <script src="../static/js/tiny-slider.js"></script>
+    <!-- Tobii -->
+    <script src="../static/js/tobii.min.js"></script>
+    <!-- Icons -->
+    <script src="../static/js/feather.min.js"></script>
+    <!-- Main Js -->
+    <script src="../static/js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
+    <script src="../static/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+</body>
+</html>

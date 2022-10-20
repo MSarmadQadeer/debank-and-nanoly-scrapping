@@ -16,6 +16,16 @@ def index():
     return render_template("index.html", title="Home Screen")
 
 
+@app.route('/blogs', methods=["GET"])
+def blogs():
+    return render_template("blogs.html", title="Blogs")
+
+
+@app.route('/blogs/cryptocurrency-investing-beginners-guide', methods=["GET"])
+def cryptocurrencyInvestingBeginnersGuide():
+    return render_template("cryptocurrency-investing-beginners-guide.html", title="Cryptocurrency Investing")
+
+
 # @app.route('/api/<publicAddress>')
 # def apiCall(publicAddress):
 #     results = getScrappedData(publicAddress)
