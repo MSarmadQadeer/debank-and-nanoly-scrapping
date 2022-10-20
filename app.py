@@ -26,6 +26,16 @@ def cryptocurrencyInvestingBeginnersGuide():
     return render_template("cryptocurrency-investing-beginners-guide.html", title="Cryptocurrency Investing")
 
 
+@app.route('/insights', methods=["GET"])
+def insights():
+    return render_template("insights.html", title="Insights")
+
+
+@app.route('/insights/bitcoin-bulls-marching-20k', methods=["GET"])
+def bitcoinBullsMarching20k():
+    return render_template("bitcoin-bulls-marching-20k.html", title="Bitcoin Bulls Marching 20k")
+
+
 # @app.route('/api/<publicAddress>')
 # def apiCall(publicAddress):
 #     results = getScrappedData(publicAddress)
