@@ -36,6 +36,11 @@ def bitcoinBullsMarching20k():
     return render_template("bitcoin-bulls-marching-20k.html", title="Bitcoin Bulls Marching 20k")
 
 
+@app.route('/trust', methods=["GET"])
+def trust():
+    return render_template("trust.html", title="Trust")
+
+
 # @app.route('/api/<publicAddress>')
 # def apiCall(publicAddress):
 #     results = getScrappedData(publicAddress)

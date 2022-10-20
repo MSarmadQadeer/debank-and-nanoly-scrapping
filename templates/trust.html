@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block navBg_class %}bg-white{% endblock %}
+
+{% block logo %}
+<a class="logo" href="/">
+    <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
+    <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+</a>
+{% endblock %}
+
+{% block body %}
+<!-- Hero Start -->
+<section class="bg-half-170 bg-light d-table w-100">
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="pages-heading">
+                    <h2> Trust Is Our Defining Principle </h2>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+        
+        <div class="position-breadcrumb">
+            <nav aria-label="breadcrumb" class="d-inline-block">
+                <ul class="breadcrumb bg-white rounded shadow mb-0 px-4 py-2">
+                    <li class="breadcrumb-item"><a href="/">Landrick</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Trust</li>
+                </ul>
+            </nav>
+        </div>
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!--Shape End-->
+
+<!-- Blog STart -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <!-- BLog Start -->
+            <div class="col-12">
+                <div class="card blog blog-detail border-0 shadow rounded">
+                    <div class="card-body content">
+                        <p class="text-muted mt-3 mb-5">Level Capital has operated with a trust-first mentality from day one. Our security philosophy adheres to principles that echo through our portfolio management and business structure.</p>
+                        <blockquote class="blockquote mt-3 p-3 mb-5">
+                            <p class="text-primary mb-0 fst-italic">" CRYPTO IS ABOUT GIVING YOU GREATER CHOICE, INDEPENDENCE, AND OPPORTUNITY. WE ARE HERE TO HELP YOU ON YOUR JOURNEY TO GREATER FINANCIAL INDEPENDENCE BY GIVING YOU PEACE OF MIND. "</p>
+                        </blockquote>
+
+                        <p class="text-muted mt-3">Cryptocurrency has the capacity to force a redesign of the traditional financial system, something that we at Level Capital embrace. The DeFi movement which leverages decentralized networks to transform old financial products into trustless and transparent protocols is the future of finance, and we want to help you be a part of the movement in a way that fosters and protects the rights and dignity of the individual.</p>
+                        <p class="text-muted">Crypto is not just a technology, it is a movement. But it won’t happen unless there are trustworthy and secure ways for individuals and institutions to discover and interact with this new frontier. </p>
+                        <p class="text-muted">We founded Level Capital with a “trust-first” mentality. We have worked hard to provide you with a high-integrity choice and we look forward to earning and maintaining your trust. </p>
+                        <p class="text-muted">We are subject to capital reserve requirements, cybersecurity requirements, and compliance standards.</p>
+
+
+                        <img src="../static/images/crypto-insight-image2.jpg" class="img-fluid rounded-top w-100" alt="">
+                        
+                        
+
+                        <h6 class="text-primary mt-5 mb-4">JOIN LEVEL CAPITAL AS THE FIRST CRYPTOCURRENCY PRIVATE WEALTH MANAGEMENT FIRM</h6>
+                        <p class="text-muted mt-3">Your time is precious, and your cryptocurrency assets are under more pressure than ever. In this environment, you may not have had time to give discretionary asset management the serious attention it deserves.</p>
+                        <p class="text-muted">Drawing on over 20 years of experience working with the world’s leading businesses, entrepreneurs and institutions, we mobilize our people, culture, technologies and ideas to advance the success of our clients, broaden individual prosperity and accelerate economic progress. </p>
+                        
+                        <blockquote class="blockquote mt-3 p-3">
+                            <h6 class="text-primary fst-italic">Put 20% of your net worth in this strategy so you know you’re okay in the long run.</h6>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <!-- BLog End -->
+        </div><!--end row-->
+    </div><!--end container-->
+</section><!--end section-->
+<!-- Blog End -->
+{% endblock %}
