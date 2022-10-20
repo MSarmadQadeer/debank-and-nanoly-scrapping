@@ -1,387 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "layout.html" %}
+{% block title %}{{ title }}{% endblock %}
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="../static/images/favicon.ico">
-    <!-- Bootstrap -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Icons -->
-    <link href="../static/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
-    <!-- Main Css -->
-    <link href="../static/css/theme.css" rel="stylesheet" type="text/css" id="theme-opt" />
-    <link href="../static/css/colors/slateblue.css" rel="stylesheet" id="color-opt">
+{% block navBg_class %}bg-white{% endblock %}
 
-    <title>{{ title }}</title>
-</head>
-<body>
-    <!-- Loader -->
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Loader -->
-    
-    <!-- Navbar STart -->
-    <header id="topnav" class="defaultscroll sticky bg-white">
-        <div class="container">
-            <!-- Logo container-->
-            <a class="logo" href="/">
-                <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
-                <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
-            </a>
+{% block logo %}
+<a class="logo" href="/">
+    <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
+    <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+</a>
+{% endblock %}
 
-            <!-- End Logo container-->
-            <div class="menu-extras">
-                <div class="menu-item">
-                    <!-- Mobile menu toggle-->
-                    <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
-                        <div class="lines">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </a>
-                    <!-- End mobile menu toggle-->
-                </div>
-            </div>
-
-            <!--Login button Start-->
-            <ul class="buy-button list-inline mb-0">
-                <li class="list-inline-item mb-0">
-                    <a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <div class="login-btn-primary"><span class="btn btn-icon btn-pills btn-soft-primary"><i data-feather="settings" class="fea icon-sm"></i></span></div>
-                        <div class="login-btn-light"><span class="btn btn-icon btn-pills btn-light"><i data-feather="settings" class="fea icon-sm"></i></span></div>
-                    </a>
-                </li>
-            </ul>
-            <!--Login button End-->
-    
-            <div id="navigation">
-                <!-- Navigation Menu-->   
-                <ul class="navigation-menu nav-right">
-                    <li><a href="index-crypto.html" class="sub-menu-item">Home</a></li>
-                    <li><a href="crypto-about.html" class="sub-menu-item"> About Us</a></li>
-                    <li><a href="crypto-market.html" class="sub-menu-item">Market</a></li>
-                    <li><a href="crypto-token.html" class="sub-menu-item"> Token</a></li>
-                    <li class="has-submenu parent-parent-menu-item me-5">
-                        <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
-                        <ul class="submenu">
-                            <li><a href="/blogs" class="sub-menu-item">Blogs</a></li>
-                            <li><a href="crypto-faqs.html" class="sub-menu-item">News</a></li>
-                        </ul>
-                    </li>
-                </ul><!--end navigation menu-->
-            </div><!--end navigation-->
-        </div><!--end container-->
-    </header><!--end header-->
-    <!-- Navbar End -->
-    
-    <!-- Hero Start -->
-    <section class="bg-half-170 bg-light d-table w-100">
-        <div class="container">
-            <div class="row mt-5 justify-content-center">
-                <div class="col-lg-12 text-center">
-                    <div class="pages-heading">
-                        <h2> Cryptocurrency Investing : A Beginner's Guide </h2>
-                        <ul class="list-unstyled mt-4 mb-0">
-                            <li class="list-inline-item h6 user text-muted me-2"><i class="mdi mdi-account"></i> Meghan Gardler</li>
-                            <li class="list-inline-item h6 date text-muted"><i class="mdi mdi-calendar-check"></i> October 26,2020</li>
-                        </ul>
-                    </div>
-                </div><!--end col-->
-            </div><!--end row-->
-            
-            <div class="position-breadcrumb">
-                <nav aria-label="breadcrumb" class="d-inline-block">
-                    <ul class="breadcrumb bg-white rounded shadow mb-0 px-4 py-2">
-                        <li class="breadcrumb-item"><a href="/">Landrick</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item"><a href="/blogs">Blogs</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Cryptocurrency Investing Beginner's Guide</li>
+{% block body %}
+<!-- Hero Start -->
+<section class="bg-half-170 bg-light d-table w-100">
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="pages-heading">
+                    <h2> Cryptocurrency Investing : A Beginner's Guide </h2>
+                    <ul class="list-unstyled mt-4 mb-0">
+                        <li class="list-inline-item h6 user text-muted me-2"><i class="mdi mdi-account"></i> Meghan Gardler</li>
+                        <li class="list-inline-item h6 date text-muted"><i class="mdi mdi-calendar-check"></i> October 26,2020</li>
                     </ul>
-                </nav>
-            </div>
-        </div> <!--end container-->
-    </section><!--end section-->
-    <!-- Hero End -->
-
-    <!-- Shape Start -->
-    <div class="position-relative">
-        <div class="shape overflow-hidden text-white">
-            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
-            </svg>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+        
+        <div class="position-breadcrumb">
+            <nav aria-label="breadcrumb" class="d-inline-block">
+                <ul class="breadcrumb bg-white rounded shadow mb-0 px-4 py-2">
+                    <li class="breadcrumb-item"><a href="/">Landrick</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item"><a href="/blogs">Blogs</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cryptocurrency Investing Beginner's Guide</li>
+                </ul>
+            </nav>
         </div>
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
     </div>
-    <!--Shape End-->
+</div>
+<!--Shape End-->
 
-    <!-- Blog STart -->
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <!-- BLog Start -->
-                <div class="col-12">
-                    <div class="card blog blog-detail border-0 shadow rounded">
-                        <div class="card-body content">
-                            <p class="text-muted mt-3 mb-5">If you ask someone if they know what Bitcoin is, they will probably say yes. But if you ask them to explain it, they may suddenly remember an appointment they have to get to immediately. Even seasoned investors are often reluctant to buy crypto because they’re not sure how it works. Cryptocurrency didn’t exist until 2008, so it’s harder for people to comprehend than a more familiar system, like buying stocks and bonds through the stock market. Bitcoin is the most well-known cryptocurrency and has the highest trading volume, and the entire blockchain industry is built on the fundamentals of the original Bitcoin whitepaper. </p>
-                            <img src="../static/images/crypto-blog-image.jpg" class="img-fluid rounded-top w-100" alt="">
-                            
-                            <h6 class="text-primary mt-5 mb-4">WHERE DOES BITCOIN COME FROM?</h6>
-                            <p class="text-muted mt-3 mb-3">Bitcoins are produced through a process called mining. Similarly to how miners in the California gold rush sifted through dirt to find gleaming nuggets, Bitcoin miners sift through complicated mathematical puzzles. Or, more accurately, their computers do, as the complicated problems can only be decrypted by robust computer hardware. The puzzles that they solve are the encryption that keeps a Bitcoin transaction secure. </p>
-                            <p class="text-muted mb-5">The user assigns this hardware to analyze an encrypted transaction and make sure that it is authentic. The user’s payment for this process is the cryptocurrency that they are analyzing. The blockchain creates the coin to distribute it, and more currency comes onto the market. Bitcoin is often compared to gold because of the finite nature. There will only ever be 21,000,000 Bitcoins in existence. </p>
+<!-- Blog STart -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <!-- BLog Start -->
+            <div class="col-12">
+                <div class="card blog blog-detail border-0 shadow rounded">
+                    <div class="card-body content">
+                        <p class="text-muted mt-3 mb-5">If you ask someone if they know what Bitcoin is, they will probably say yes. But if you ask them to explain it, they may suddenly remember an appointment they have to get to immediately. Even seasoned investors are often reluctant to buy crypto because they’re not sure how it works. Cryptocurrency didn’t exist until 2008, so it’s harder for people to comprehend than a more familiar system, like buying stocks and bonds through the stock market. Bitcoin is the most well-known cryptocurrency and has the highest trading volume, and the entire blockchain industry is built on the fundamentals of the original Bitcoin whitepaper. </p>
+                        <img src="../static/images/crypto-blog-image.jpg" class="img-fluid rounded-top w-100" alt="">
+                        
+                        <h6 class="text-primary mt-5 mb-4">WHERE DOES BITCOIN COME FROM?</h6>
+                        <p class="text-muted mt-3 mb-3">Bitcoins are produced through a process called mining. Similarly to how miners in the California gold rush sifted through dirt to find gleaming nuggets, Bitcoin miners sift through complicated mathematical puzzles. Or, more accurately, their computers do, as the complicated problems can only be decrypted by robust computer hardware. The puzzles that they solve are the encryption that keeps a Bitcoin transaction secure. </p>
+                        <p class="text-muted mb-5">The user assigns this hardware to analyze an encrypted transaction and make sure that it is authentic. The user’s payment for this process is the cryptocurrency that they are analyzing. The blockchain creates the coin to distribute it, and more currency comes onto the market. Bitcoin is often compared to gold because of the finite nature. There will only ever be 21,000,000 Bitcoins in existence. </p>
 
-                            <h6 class="text-primary mt-5 mb-4">WAIT, WHAT’S A BLOCKCHAIN?</h6>
-                            <p class="text-muted mt-3">A blockchain is a chain made out of blocks. (Wait, stay with me.) A “block” is what the cryptocurrency world calls a transaction. When a user participates in a transaction, his or her computer sends out a long string of random numbers and letters, sort of like a randomly assigned password on a WiFi network but even longer.</p>
-                            <p class="text-muted">The address travels to a global computer network. The computers on that network have to solve a puzzle that determines whether the transaction came from the place and person as it claims it did. Once the network has verified the address by solving the puzzle, it sends the verification information to an even bigger network. The computer on this network that solves the puzzle receives coin in payment, and the transaction is officially verified. </p>
-                            <p class="text-muted mb-5">The network then records the results of the verification as a block. The blocks are stored on the network in a sequence, which is the blockchain. </p>
+                        <h6 class="text-primary mt-5 mb-4">WAIT, WHAT’S A BLOCKCHAIN?</h6>
+                        <p class="text-muted mt-3">A blockchain is a chain made out of blocks. (Wait, stay with me.) A “block” is what the cryptocurrency world calls a transaction. When a user participates in a transaction, his or her computer sends out a long string of random numbers and letters, sort of like a randomly assigned password on a WiFi network but even longer.</p>
+                        <p class="text-muted">The address travels to a global computer network. The computers on that network have to solve a puzzle that determines whether the transaction came from the place and person as it claims it did. Once the network has verified the address by solving the puzzle, it sends the verification information to an even bigger network. The computer on this network that solves the puzzle receives coin in payment, and the transaction is officially verified. </p>
+                        <p class="text-muted mb-5">The network then records the results of the verification as a block. The blocks are stored on the network in a sequence, which is the blockchain. </p>
 
-                            <h6 class="text-primary mt-5 mb-4">WHAT’S SO SPECIAL ABOUT A BLOCKCHAIN?</h6>
-                            <p class="text-muted mt-3">A traditional database lives in a single physical location, usually either a computer or a server. Even large companies tend to only have three to five backups for their data, and this is why it costs so much money for them to protect it. If those computers are compromised, that data is gone forever.</p>
-                            <p class="text-muted">Blockchain, however, backs up its data on thousands of computers all over the world. A file may be stored all in one piece or multiple pieces so that hackers can never get the whole picture. </p>
-                            <p class="text-muted">If a hacker does succeed in getting through and changes some data, all of the other computers on the network come together to evaluate the change, as though it were a block. If the rest of the system doesn’t agree that the difference is valid, it is officially rejected and changed back so that all backup computers are in agreement. </p>
-                            <blockquote class="blockquote mt-3 p-3">
-                                <p class="text-muted mb-0 fst-italic">" Buying cryptocurrency now is mostly a speculative endeavor, in the hopes that it will increase in price. "</p>
-                            </blockquote>
+                        <h6 class="text-primary mt-5 mb-4">WHAT’S SO SPECIAL ABOUT A BLOCKCHAIN?</h6>
+                        <p class="text-muted mt-3">A traditional database lives in a single physical location, usually either a computer or a server. Even large companies tend to only have three to five backups for their data, and this is why it costs so much money for them to protect it. If those computers are compromised, that data is gone forever.</p>
+                        <p class="text-muted">Blockchain, however, backs up its data on thousands of computers all over the world. A file may be stored all in one piece or multiple pieces so that hackers can never get the whole picture. </p>
+                        <p class="text-muted">If a hacker does succeed in getting through and changes some data, all of the other computers on the network come together to evaluate the change, as though it were a block. If the rest of the system doesn’t agree that the difference is valid, it is officially rejected and changed back so that all backup computers are in agreement. </p>
+                        <blockquote class="blockquote mt-3 p-3">
+                            <p class="text-muted mb-0 fst-italic">" Buying cryptocurrency now is mostly a speculative endeavor, in the hopes that it will increase in price. "</p>
+                        </blockquote>
 
-                            <h6 class="text-primary mt-5 mb-4">HOW DO I GET STARTED?</h6>
-                            <p class="text-muted mt-3">Cryptocurrency investing is not just for anarchists or computer geniuses. Popular cryptocurrency exchanges like Gemini, Binance, and Coinbase work like stock exchanges and make it easy for investors to buy their first tokens.</p>
-                            <p class="text-muted">If you intend to buy crypto on an exchange, the sign up process is very similar to what you would experience at TD Ameritrade or Wells Fargo. A centralized exchange will ask for identifying information like your name, address, social security number and more to comply with US regulations. Then, you can link your bank account or securely purchase crypto with a credit card. </p>
-                            <p class="text-muted mb-5">Buying cryptocurrency now is mostly a speculative endeavor, in the hopes that it will increase in price. Many of the use cases for cryptocurrencies are unproven, and need more time and development to be widely adopted. Level Capital has a team of experts who are here to help with any barriers to entry. If you are crypto curious or a seasoned investor, we are available to discuss portfolio options. Schedule a call with a wealth manager today. </p>
-                        </div>
+                        <h6 class="text-primary mt-5 mb-4">HOW DO I GET STARTED?</h6>
+                        <p class="text-muted mt-3">Cryptocurrency investing is not just for anarchists or computer geniuses. Popular cryptocurrency exchanges like Gemini, Binance, and Coinbase work like stock exchanges and make it easy for investors to buy their first tokens.</p>
+                        <p class="text-muted">If you intend to buy crypto on an exchange, the sign up process is very similar to what you would experience at TD Ameritrade or Wells Fargo. A centralized exchange will ask for identifying information like your name, address, social security number and more to comply with US regulations. Then, you can link your bank account or securely purchase crypto with a credit card. </p>
+                        <p class="text-muted mb-5">Buying cryptocurrency now is mostly a speculative endeavor, in the hopes that it will increase in price. Many of the use cases for cryptocurrencies are unproven, and need more time and development to be widely adopted. Level Capital has a team of experts who are here to help with any barriers to entry. If you are crypto curious or a seasoned investor, we are available to discuss portfolio options. Schedule a call with a wealth manager today. </p>
                     </div>
                 </div>
-                <!-- BLog End -->
-            </div><!--end row-->
-        </div><!--end container-->
-    </section><!--end section-->
-    <!-- Blog End -->
-
-    <!-- Footer Start -->
-    <footer class="footer">
-        <div class="py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <div class="section-title">
-                            <div class="d-flex">
-                                <i class="uil uil-mobile-android display-4 text-white title-dark"></i>
-                                <div class="flex-1 ms-md-4 ms-3">
-                                    <h4 class="fw-medium text-light title-dark mb-1">Download our app now !</h4>
-                                    <p class="text-white-50 mb-0">Install our Landrick app and grow your portfolio with Landrick and earn more n more !</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mt-4 mt-sm-0">
-                        <div class="text-md-end ms-5 ms-sm-0">
-                            <a href="javascript:void(0)" class="btn btn-primary m-1"><i class="uil uil-apple"></i> App Store</a>
-                            <a href="javascript:void(0)" class="btn btn-soft-primary m-1"><i class="uil uil-google-play"></i> Play Store</a>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
-        </div><!--end div-->
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-py-60 footer-border">
-                        <div class="row">
-                            <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
-                                <a href="#" class="logo-footer">
-                                    <img src="../static/images/logo-light.png" height="24" alt="">
-                                </a>
-                                <p class="mt-4">Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.</p>
-                                <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
-                                </ul><!--end icon-->
-                            </div><!--end col-->
-                            
-                            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                                <h5 class="footer-head">Company</h5>
-                                <ul class="list-unstyled footer-list mt-4">
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> About us</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Services</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Team</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Pricing</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Project</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Careers</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Blog</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Login</a></li>
-                                </ul>
-                            </div><!--end col-->
-                            
-                            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                                <h5 class="footer-head">Usefull Links</h5>
-                                <ul class="list-unstyled footer-list mt-4">
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Terms of Services</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Privacy Policy</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Documentation</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Changelog</a></li>
-                                    <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Components</a></li>
-                                </ul>
-                            </div><!--end col-->
-        
-                            <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                                <h5 class="text-light footer-head">Start trading with Landrick</h5>
-
-                                <ul class="list-unstyled footer-list mt-4 mb-2">
-                                    <li class="list-inline-item mx-1"><a href="auth-bs-login.html" class="btn btn-soft-primary">Signin</a></li>
-                                    <li class="list-inline-item mx-1"><a href="auth-bs-signup.html" class="btn btn-primary">Signup</a></li>
-                                </ul>
-                                <small class="d-block">Institutional Investor ? <a href="#" class="text-foot fw-medium">Learn More <i class="uil uil-arrow-right"></i></a></small>
-
-                                <img src="../static/images/logo-icon.png" class="avatar avatar-small mt-4" alt="">
-                            </div><!--end col-->
-                        </div><!--end row-->
-                    </div>
-                </div><!--end col-->
-            </div><!--end row-->
-        </div><!--end container-->
-
-        <div class="footer-py-30 footer-bar">
-            <div class="container text-center">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <div class="text-sm-start">
-                            <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Landrick. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
-                        </div>
-                    </div><!--end col-->
-
-                    <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                        <ul class="list-unstyled text-sm-end mb-0">
-                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/american-ex.png" class="avatar avatar-ex-sm" title="American Express" alt=""></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/discover.png" class="avatar avatar-ex-sm" title="Discover" alt=""></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/master-card.png" class="avatar avatar-ex-sm" title="Master Card" alt=""></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/paypal.png" class="avatar avatar-ex-sm" title="Paypal" alt=""></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0)"><img src="../static/images/payments/visa.png" class="avatar avatar-ex-sm" title="Visa" alt=""></a></li>
-                        </ul>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
-        </div>
-    </footer><!--end footer-->
-    <!-- Footer End -->
-
-    
-    <!-- Offcanvas Start -->
-    <div class="offcanvas offcanvas-end bg-white shadow" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header p-4 border-bottom">
-            <h5 id="offcanvasRightLabel" class="mb-0">
-                <img src="../static/images/logo-dark.png" height="24" class="light-version" alt="">
-                <img src="../static/images/logo-light.png" height="24" class="dark-version" alt="">
-            </h5>
-            <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="offcanvas" aria-label="Close"><i class="uil uil-times fs-4"></i></button>
-        </div>
-        <div class="offcanvas-body p-4">
-            <div class="row">
-                <div class="col-12">
-                    <img src="../static/images/contact.svg" class="img-fluid d-block mx-auto" style="max-width: 256px;" alt="">
-                    <div class="card border-0 mt-5" style="z-index: 1">
-                        <div class="card-body p-0">
-                            <form method="post" name="myForm" onsubmit="return validateForm()" action="/sendMail">
-                                <p id="error-msg" class="mb-0"></p>
-                                <div id="simple-msg"></div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Your Name</label>
-                                            <div class="form-icon position-relative">
-                                                <i data-feather="user" class="fea icon-sm icons"></i>
-                                                <input name="name" type="text" class="form-control ps-5" placeholder="Name :">
-                                            </div>
-                                        </div>
-                                    </div><!--end col-->
-
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Your Email</label>
-                                            <div class="form-icon position-relative">
-                                                <i data-feather="mail" class="fea icon-sm icons"></i>
-                                                <input name="email" type="email" class="form-control ps-5" placeholder="Email :">
-                                            </div>
-                                        </div> 
-                                    </div><!--end col-->
-
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Your Contact</label>
-                                            <div class="form-icon position-relative">
-                                                <i data-feather="phone" class="fea icon-sm icons"></i>
-                                                <input name="contact-number" type="number" class="form-control ps-5" placeholder="Contact :">
-                                            </div>
-                                        </div> 
-                                    </div><!--end col-->
-
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Your Public Address</label>
-                                            <div class="form-icon position-relative">
-                                                <i data-feather="map-pin" class="fea icon-sm icons"></i>
-                                                <input name="public-address" class="form-control ps-5" placeholder="Public Address :" value="{{ publicAddress }}">
-                                            </div>
-                                        </div>
-                                    </div><!--end col-->
-
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Subject</label>
-                                            <div class="form-icon position-relative">
-                                                <i data-feather="book" class="fea icon-sm icons"></i>
-                                                <input name="subject" id="subject" class="form-control ps-5" placeholder="subject :">
-                                            </div>
-                                        </div>
-                                    </div><!--end col-->
-
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Your Message <span class="text-danger">*</span></label>
-                                            <div class="form-icon position-relative">
-                                                <i data-feather="message-circle" class="fea icon-sm icons clearfix"></i>
-                                                <textarea name="message" rows="4" class="form-control ps-5" placeholder="Message :"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="d-grid">
-                                            <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
-                                        </div>
-                                    </div><!--end col-->
-                                </div><!--end row-->
-                            </form>
-                        </div>
-                    </div>
-                </div><!--end col-->
-            </div><!--end row-->
-        </div>
-    </div>
-    <!-- Offcanvas End -->
-
-    <!-- Back to top -->
-    <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
-    <!-- Back to top -->
-
-    <!-- javascript -->
-    <script src="../static/js/bootstrap.bundle.min.js"></script>
-    <!-- Icons -->
-    <script src="../static/js/feather.min.js"></script>
-    <!-- Main Js -->
-    <script src="../static/js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
-    <script src="../static/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
-</body>
-</html>
+            </div>
+            <!-- BLog End -->
+        </div><!--end row-->
+    </div><!--end container-->
+</section><!--end section-->
+<!-- Blog End -->
+{% endblock %}
