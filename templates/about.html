@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block logo %}
+<a class="logo" href="/">
+    <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
+    <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+</a>
+{% endblock %}
+
+{% block body %}
+<!-- Hero Start -->
+<section class="bg-half-170 bg-light d-table w-100" style="background: url('images/shape02.png') top left;">
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="pages-heading">
+                    <h4 class="title mb-0"> About us </h4>
+                </div>
+            </div>  <!--end col-->
+        </div><!--end row-->
+        
+        <div class="position-breadcrumb">
+            <nav aria-label="breadcrumb" class="d-inline-block">
+                <ul class="breadcrumb bg-white rounded shadow mb-0 px-4 py-2">
+                    <li class="breadcrumb-item"><a href="/">Iqcapital</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                </ul>
+            </nav>
+        </div>
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!--Shape End-->
+
+<!-- Start About -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="position-relative me-lg-5">
+                    <img src="../static/images/crypto/revenue.svg" class="img-fluid" alt="">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <div class="section-title">
+                    <span class="badge bg-soft-primary rounded">About</span>
+                    <h4 class="title mb-3 mt-2">Our Story</h4>
+
+                    <p class="text-muted">A few years ago a group of friends began comparing notes about the quality of advice they were receiving from financial services providers about their cryptocurrency assets. What started as conversations looking to solve complex tax, regulatory and financial wellbeing issues, led to the realization that the kind of firm they were looking for simply did not exist. So they decided to build it.</p>
+                    <p class="text-muted">Iqcapital brings a deep understanding of issues affecting crypto investors, because we experience the same issues. By “leveling” the volatility, we create more certainty for your crypto assets.</p>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+
+    <div class="container mt-100 mt-60">
+        <div class="row align-items-center">
+            <div class="col-lg-7 order-2 order-md-1">
+                <div class="section-title me-lg-5">
+                    <h4 class="title mb-3">Build the future of technology</h4>
+                    <p class="text-muted">We are Combining Wall Street acumen with deep crypto experience.</p>
+                
+                    <ul class="list-unstyled text-muted mb-0">
+                        <li class="mb-1"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span><span class="fw-medium text-primary">Wealth Management -</span>  Discretionary partner account.</li>
+                        <li class="mb-1"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span><span class="fw-medium text-primary">Crypto Financial Products -</span>  Capital preservation bond.</li>
+                        <li class="mb-1"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span><span class="fw-medium text-primary">Separately Managed Accounts -</span>  >$5 Million bespoke portfolio.</li>
+                    </ul>
+
+                    <div class="mt-4">
+                        <a href="javascript:void(0)" class="btn btn-soft-primary"><i class="uil uil-wallet"></i> Go to wallet</a>
+                    </div>
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-5 order-1 order-md-2">
+                <img src="../static/images/crypto/profit.svg" class="img-fluid" alt="">
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</section><!--end section-->
+<!-- End About -->
+{% endblock %}

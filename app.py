@@ -16,6 +16,11 @@ def index():
     return render_template("index.html", title="Home Screen")
 
 
+@app.route('/about', methods=["GET"])
+def about():
+    return render_template("about.html", title="About Us")
+
+
 @app.route('/blogs', methods=["GET"])
 def blogs():
     return render_template("blogs.html", title="Blogs")

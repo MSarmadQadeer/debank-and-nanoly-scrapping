@@ -21,7 +21,7 @@
             <div class="col-lg-10">
                 <div class="title-heading text-center">
                     <img src="../static/images/crypto/crypto.svg" height="136" class="mover" alt="">
-                    <h1 class="heading text-primary text-shadow-title mt-4 mb-3">Know Your Tokens Best Yields!</h1>
+                    <h1 class="heading text-primary text-shadow-title mt-4 mb-3">Know Your Token's Best Yields!</h1>
                 </div>
                 <div class="text-center subcribe-form mt-4 pt-2">
                     <form action="/apiCall" method="get">
@@ -35,9 +35,9 @@
 </section><!--end section-->
 <!-- Hero End -->
 
+{% if results %}
 <!-- FEATURES START -->
-<section class="section border-top">
-    {% if results %}
+<section class="section border-top pb-0">
     <!-- Table Start -->
     <div class="container">
         <div class="row justify-content-center">
@@ -68,7 +68,7 @@
                                 <td class="text-success p-3">{{ result.APY }}</td>
                                 <td class="text-success p-3">{{ result.TVL }}</td>
                                 <td class="text-muted p-3">{{ result.risk }}</td>
-                                <td class="p-3 text-end"><a href="{{ result.link }}" class="btn btn-sm btn-primary">Trade</a></td>
+                                <td class="p-3 text-end"><a href="{{ result.link }}" class="btn btn-sm btn-primary">Link</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -84,210 +84,126 @@
         </div><!--end row-->
     </div><!--end container-->
     <!-- Table End -->
-    {% endif %}
+</section><!--end section-->
+<!-- Section END -->
+{% endif %}  
 
-    <!-- Process Start -->
+<!-- Start -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6">
+                <div class="position-relative">
+                    <img src="../static/images/about.jpg" class="img-fluid mx-auto d-block shadow rounded" alt="">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-7 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <div class="section-title ms-lg-5">
+                    <h4 class="title mt-3 mb-4">Who we are?</h4>
+                    <p class="text-muted para-desc">A few years ago a group of friends began comparing notes about the quality of advice they were receiving from financial services providers about their cryptocurrency assets. What started as conversations looking to solve complex tax, regulatory and financial wellbeing issues, led to the realization that the kind of firm they were looking for simply did not exist. So they decided to build it.</p>
+
+                    <div class="mt-4">
+                        <a href="/about" class="btn btn-primary">More About</a>
+                    </div>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+
     <div class="container mt-100 mt-60">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <div class="section-title mb-4 pb-2">
-                    <h4 class="title mb-4">How it works ?</h4>
-                    <p class="text-muted para-desc mb-0 mx-auto">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+        <div class="row align-items-end mb-4 pb-2">
+            <div class="col-md-8">
+                <div class="section-title text-center text-md-start">
+                    <h4 class="title mb-4">Built For</h4>
+                    <p class="text-muted mb-0 para-desc">Let's Level The Volatility Together</p>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
 
         <div class="row">
-            <div class="col-md-3 col-12 mt-4 pt-2">
-                <div class="text-center">
-                    <div class="rounded p-4 shadow">
-                        <a href="javascript:void(0)"><img src="../static/images/crypto/1.png" height="100" class="mx-auto d-block" alt=""></a>
-                    </div>
-
-                    <div class="mt-3">
-                        <h5><a href="javascript:void(0)" class="text-primary">Create Account</a></h5>
-                        <p class="text-muted mb-0">Earn upto 10%</p>
-                    </div>
-                </div>
+            <div class="col-md-4 mt-4 pt-2">
+                <ul class="nav nav-pills nav-justified flex-column bg-white rounded shadow p-3 mb-0 sticky-bar" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link rounded active" id="dentalcare" data-bs-toggle="pill" href="#dental" role="tab" aria-controls="dental" aria-selected="false">
+                            <div class="text-start py-1 px-2">
+                                <h6 class="mb-0">Clients</h6>
+                            </div>
+                        </a><!--end nav link-->
+                    </li><!--end nav item-->
+                    
+                    <li class="nav-item mt-2">
+                        <a class="nav-link rounded" id="cardeography" data-bs-toggle="pill" href="#cardeo" role="tab" aria-controls="cardeo" aria-selected="false">
+                            <div class="text-start py-1 px-2">
+                                <h6 class="mb-0">Institutions</h6>
+                            </div>
+                        </a><!--end nav link-->
+                    </li><!--end nav item-->
+                    
+                    <li class="nav-item mt-2">
+                        <a class="nav-link rounded" id="eyecare" data-bs-toggle="pill" href="#eye" role="tab" aria-controls="eye" aria-selected="false">
+                            <div class="text-start py-1 px-2">
+                                <h6 class="mb-0">Partners</h6>
+                            </div>
+                        </a><!--end nav link-->
+                    </li><!--end nav item-->
+                </ul><!--end nav pills-->
             </div><!--end col-->
 
-            <div class="col-md-3 col-12 mt-4 pt-2">
-                <div class="text-center">
-                    <div class="rounded p-4 shadow">
-                        <a href="javascript:void(0)"><img src="../static/images/crypto/2.png" height="100" class="mx-auto d-block" alt=""></a>
-                    </div>
+            <div class="col-md-8 col-12 mt-4 pt-2">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade bg-white show active p-4 rounded shadow" id="dental" role="tabpanel" aria-labelledby="dentalcare">
+                        <img src="../static/images/clients.jpg" class="img-fluid rounded shadow" alt="">
+                        <div class="mt-4">
+                            <h5 class="mb-4">Built for Bitcoin Billionaires</h5>
 
-                    <div class="mt-3">
-                        <h5><a href="javascript:void(0)" class="text-primary">Buy Coin</a></h5>
-                        <p class="text-muted mb-0">Save upto $50/coin</p>
-                    </div>
-                </div>
-            </div><!--end col-->
+                            <p class="text-primary mb-1 fw-bold">Active, timely and decisive portfolio management</p>
+                            <p class="text-muted mb-3">A discretionary manager is able to make rapid adjustments to a client's portfolio in the event of market shifts. With crypto markets never closing, you always have someone watching your porfolilio.</p>
 
-            <div class="col-md-3 col-12 mt-4 pt-2">
-                <div class="text-center">
-                    <div class="rounded p-4 shadow">
-                        <a href="javascript:void(0)"><img src="../static/images/crypto/3.png" height="100" class="mx-auto d-block" alt=""></a>
-                    </div>
+                            <p class="text-primary mb-1 fw-bold">Access to institutional investor products</p>
+                            <p class="text-muted mb-3">Iqcapital has access to many products normally only available to institutions or hedge funds and can negotiate attractive terms while offering the lowest cost investment options for our clients.</p>
 
-                    <div class="mt-3">
-                        <h5><a href="javascript:void(0)" class="text-primary">Loans</a></h5>
-                        <p class="text-muted mb-0">Use crypto as collateral</p>
-                    </div>
-                </div>
-            </div><!--end col-->
+                            <p class="text-primary mb-1 fw-bold">Focused on unique needs of affluent crypto holders</p>
+                            <p class="text-muted mb-3">We understand the complicated tax situations, life events, privacy concerns, and international lifestyle of high net worth crypto holders. Let us turn your challenges into opportunities.</p>
 
-            <div class="col-md-3 col-12 mt-4 pt-2">
-                <div class="text-center">
-                    <div class="rounded p-4 shadow">
-                        <a href="javascript:void(0)"><img src="../static/images/crypto/4.png" height="100" class="mx-auto d-block" alt=""></a>
-                    </div>
+                            <p class="text-primary mb-1 fw-bold">Enhanced portfolio reporting and tax documentation</p>
+                            <p class="text-muted mb-3">We start with an in-depth analysis of your needs, expectations and risk tolerance, so we can work together to optimize your portfolio. We work with you over time, and are always available to discuss your portfolio.</p>
+                            
+                        </div>
+                    </div><!--end teb pane-->
+                    
+                    <div class="tab-pane fade bg-white p-4 rounded shadow" id="cardeo" role="tabpanel" aria-labelledby="cardeography">
+                        <img src="../static/images/institutions.jpg" class="img-fluid rounded shadow" alt="">
+                        <div class="mt-4">
+                            <h5 class="mb-4">Built for Institutions</h5>
+                            <p class="text-muted mb-3">As a trusted cryptocurrency private wealth manager, our singular goal is to provide the most reliable, high touch, high quality solution for our institutional clients who want exposure to cryptocurrency with minimal risk. We beat traditional financial service institutions, who are typically slow to adopt new and innovative approaches, who are not incentivized to respond to their customers’ ever-changing needs, and who aren’t working to win your business and your trust every day. Whether you have a hefty balance sheet to manage, looking for arbitrage opportunities, or looking for tax optimization, you can turn to Level to help manage your goals, no matter how complex they may be. We have the expertise to understand your needs, because as investors we experience the same complexities.</p>
+                        </div>
+                    </div><!--end teb pane-->
 
-                    <div class="mt-3">
-                        <h5><a href="javascript:void(0)" class="text-primary">Credit & Debit Cards</a></h5>
-                        <p class="text-muted mb-0">Payments with cards</p>
-                    </div>
-                </div>
+                    <div class="tab-pane fade bg-white p-4 rounded shadow" id="eye" role="tabpanel" aria-labelledby="eyecare">
+                        <img src="../static/images/partners.jpg" class="img-fluid rounded shadow" alt="">
+                        <div class="mt-4">
+                            <h5 class="mb-4">Built for Partners</h5>
+                            <p class="text-muted mb-3">Level Capital is a one stop shop for the Crypto Asset Management Revolution. Together with our partners - the technology companies and financial institutions pioneering the blockchain technology movement - we are rebuilding the world of finance. Level has pioneered many asset management techniques that are more common to traditional financial services, and adapted it to cryptocurrency portfolio management. We turn blockchain projects into investable assets so our partners don’t have to take risks they don’t want to or spend money they don’t have.</p>
+                        </div>
+                    </div><!--end teb pane-->
+                </div><!--end tab content-->
             </div><!--end col-->
         </div><!--end row-->
     </div><!--end container-->
-    <!-- Process End -->
 </section><!--end section-->
-<!-- Section END -->     
-
-<!-- Counter Start -->
-<section class="section-two bg-primary bg-gradient">
-    <div class="container">
-        <div class="row" id="counter">
-            <div class="col-md-4">
-                <div class="counter-box text-center">
-                    <h2 class="mb-0 mt-3 title-dark display-4 text-white">$ <span class="counter-value" data-target="9706873">56343</span></h2>
-                    <h5 class="counter-head title-dark text-light">Exchanged</h5>
-                </div><!--end counter box-->
-            </div>
-
-            <div class="col-md-4 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                <div class="counter-box text-center">
-                    <h2 class="mb-0 mt-3 title-dark display-4 text-white"><span class="counter-value" data-target="106">23</span></h2>
-                    <h5 class="counter-head title-dark text-light">Countries</h5>
-                </div><!--end counter box-->
-            </div>
-
-            <div class="col-md-4 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                <div class="counter-box text-center">
-                    <h2 class="mb-0 mt-3 title-dark display-4 text-white"><span class="counter-value" data-target="56043">6483</span></h2>
-                    <h5 class="counter-head title-dark text-light">Customers</h5>
-                </div><!--end counter box-->
-            </div>
-        </div><!--end row-->
-    </div><!--end container-->
-</section><!--end section-->
-<!-- Counter End -->
+<!-- End -->
 
 <!-- Section start -->
-<section class="section">
-    <!-- Crypto Portfolio end -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <div class="section-title mb-4 pb-2">
-                    <h4 class="title mb-4">Create your cryptocurrency portfolio today</h4>
-                    <p class="text-muted para-desc mb-0 mx-auto">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
-                </div>
-            </div><!--end col-->
-        </div><!--end row-->
-
-        <div class="row">
-            <div class="col-12 mt-4 pt-2">
-                <img src="../static/images/crypto/portfolio.png" class="img-fluid mx-auto d-block" alt="">
-            </div><!--end col-->
-
-            <div class="col-md-4 col-12 mt-4">
-                <div class="card border-0 text-center features feature-primary feature-clean p-4">
-                    <div class="icons text-center mx-auto">
-                        <i class="uil uil-shield-check d-block rounded h3 mb-0"></i>
-                    </div>
-
-                    <div class="card-body p-0 mt-4">
-                        <h5>Fully Secured</h5>
-                        <p class="text-muted mb-0">Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.</p>
-                        <div class="mt-2">
-                            <a href="javascript:void(0)" class="read-more">Read More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right fea icon-sm"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end col-->
-            
-            <div class="col-md-4 col-12 mt-4">
-                <div class="card border-0 text-center features feature-primary feature-clean p-4">
-                    <div class="icons text-center mx-auto">
-                        <i class="uil uil-newspaper d-block rounded h3 mb-0"></i>
-                    </div>
-
-                    <div class="card-body p-0 mt-4">
-                        <h5>Protected by insurance</h5>
-                        <p class="text-muted mb-0">Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.</p>
-                        <div class="mt-2">
-                            <a href="javascript:void(0)" class="read-more">Read More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right fea icon-sm"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end col-->
-            
-            <div class="col-md-4 col-12 mt-4">
-                <div class="card border-0 text-center features feature-primary feature-clean p-4">
-                    <div class="icons text-center mx-auto">
-                        <i class="uil uil-browser d-block rounded h3 mb-0"></i>
-                    </div>
-
-                    <div class="card-body p-0 mt-4">
-                        <h5>Industry best practices</h5>
-                        <p class="text-muted mb-0">Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.</p>
-                        <div class="mt-2">
-                            <a href="javascript:void(0)" class="read-more">Read More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right fea icon-sm"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end col-->
-        </div><!--end row-->
-    </div><!--end container-->
-    <!-- Crypto Portfolio end -->
-
+<section class="section pt-0">
     <!-- Rate Start -->
-    <div class="container mt-100 mt-60">
+    <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-5 col-md-6 col-12">
-                <div class="p-4 text-center rounded bg-light shadow">
-                    <h4 class="mb-0"><span class="text-warning">1 BTC</span> = $ 8654.32</h4>
-                </div>
-
-                <div class="mt-4 pt-2 text-center">
-                    <a href="javascript:void"><img src="../static/images/crypto/bitcoin.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Bitcoin" alt=""></a>
-                    <a href="javascript:void"><img src="../static/images/crypto/coinye.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Coinye" alt=""></a>
-                    <a href="javascript:void"><img src="../static/images/crypto/ethereum.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Ethereum" alt=""></a>
-                    <a href="javascript:void"><img src="../static/images/crypto/litecoin.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Litecoin" alt=""></a>
-                    <a href="javascript:void"><img src="../static/images/crypto/monero.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Monero" alt=""></a>
-                    <a href="javascript:void"><img src="../static/images/crypto/auroracoin.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Auroracoin" alt=""></a>
-                    <a href="javascript:void"><img src="../static/images/crypto/potcoin.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Potcoin" alt=""></a>
-                    <a href="javascript:void"><img src="../static/images/crypto/zcash.png" class="img-fluid avatar avatar-small m-2 p-2 rounded-circle shadow" data-bs-toggle="tooltip" data-bs-placement="top" title="Zcash" alt=""></a>
-                </div>
-
-                <div class="card border-0 shadow rounded p-4 bg-light overflow-hidden mt-4">
-                    <h5 class="text-center mb-0">Live Cryptocurrency Calculator</h5>
-
-                    <div class="calculator-block mt-4">  
-                        <div class="calculator-body">  
-                            <script src="https://www.cryptonator.com/ui/js/widget/calc_widget.js"></script>  
-                        </div>  
-                    </div>
-                </div>
-            </div><!--end col-->
-
-            <div class="col-lg-7 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+            <div class="col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                 <div class="ms-lg-4">
                     <div class="section-title mb-4 pb-2">
                         <h4 class="title mb-4">Frequently asked questions</h4>
-                        <p class="text-muted para-desc mb-0">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                        <p class="text-muted para-desc mb-0">Start working with <span class="text-primary fw-bold">Iqcapital</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                     </div>
 
                     <div class="accordion" id="accordionExample">
@@ -301,7 +217,25 @@
                             <div id="collapseOne" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body text-muted bg-white">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    <p>When it comes to protecting your assets, Level Capital utilizes an ‘All-Weather Approach’ to manage market and credit risk. That means actively managing allocations to various strategies based on market conditions.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">01</span> Reputable Partners And Consultants</p>
+                                    <p>Level Capital’s portfolio risk and strategies are managed via partnerships with established and reputable counterparties.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">02</span> Operational Due Diligence</p>
+                                    <p>Level Capital applies a robust operational due diligence framework for all counterparties to ensure a clean financial audit and internal controls.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">03</span> Credit Due Diligence</p>
+                                    <p>Company’s underwriting process applies traditional bank style standards and due diligence practices. This is further supported by standard invest committee practices, robust reporting practices, and approvals.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">04</span> Diversified Portfolio</p>
+                                    <p>Level Capital takes an all weather approach to risk management. We manage to various risk factors that offset each other in quickly changing markets. Third party consultants have been brought on board to assess risk levels and strategic direction.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">05</span> Seasoned Advisors</p>
+                                    <p>Company has discretionary managers with over 30 years of financial services and banking experience with a deep knowledge of DeFi.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">06</span> Fee Schedule</p>
+                                    <p>Level Capital offers a fee-only advisory service, which is not only low-cost but free of the conflicts of interest that are often created by commission models.</p>
                                 </div>
                             </div>
                         </div>
@@ -310,13 +244,19 @@
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                     aria-expanded="false" aria-controls="collapseTwo">
-                                    Do I need a designer to use Landrick ?
+                                    What is Iqcapital's approach ?
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse border-0 collapse" aria-labelledby="headingTwo"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body text-muted bg-white">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    <p>Drawing on over 30 years of experience working with the world’s leading businesses, entrepreneurs and institutions, we aim to advance the success of our clients and broaden individual prosperity.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">01</span> Focused On The Unique Needs Of Affluent Crypto Holders</p>
+                                    <p>Through our CIO team, we offer you portfolio management and multiple solutions, supported by expertise in the multi-faceted financial world. We understand the complicated tax situation, life events, privacy concerns, and international lifestyle of cryptocurrency holders.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">02</span> A Personal Relationship With A Team Of Experts</p>
+                                    <p>We start with an in-depth analysis of your needs, expectations and risk tolerance, so we can work together to optimize your portfolio. Your own dedicated, specialist Discretionary Wealth Manager works with you over time, and is always available to discuss your portfolio.</p>
                                 </div>
                             </div>
                         </div>
@@ -325,28 +265,28 @@
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    What do I need to do to start selling ?
+                                    How Iqcapital do asset management ?
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse border-0 collapse" aria-labelledby="headingThree"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body text-muted bg-white">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
-                                </div>
-                            </div>
-                        </div>
+                                    <p>Level Capital shows a proven track record of asset management in both the DeFi and traditional finance worlds.</p>
 
-                        <div class="accordion-item rounded mt-2">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    What happens when I receive an order ?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse border-0 collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body text-muted bg-white">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    <p class="text-primary mb-0"><span class="fw-bold">01</span> Collateralized Or Guaranteed Lending</p>
+                                    <p>For crypto-based lending, Level Capital requires corporate guarantees sufficient to ensure coverage of principal loan amounts. We do not lend to short sellers to avoid outsized credit risk in volatile markets.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">02</span> Layers Of Risk Management</p>
+                                    <p>Level Capital performs daily risk management assessments and has real-time market monitoring 24/7. Reserve accounts are in place to support trading activities and all crypto positions are hedged, always with high collateral requirements and against solid counter parties.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">03</span> Institutional Framework</p>
+                                    <p>Level Capital adopts best practices related to risk management and lending on an institutional level. Our capital markets team has decades of experience from top Wall Street firms.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">04</span> Regulatory</p>
+                                    <p>Level Capital takes a conservative approach to compliance and utilizes a top tier compliance team which includes periodic outside audits. Our service providers include top legal, consulting, servicing, and other professional advisors.</p>
+
+                                    <p class="text-primary mb-0"><span class="fw-bold">05</span> Insurance</p>
+                                    <p>Our DeFi non-custodial solution through Fireblocks ensures that smart contracts on the Ethereum blockchain provide an added layer of security and no counterparty risk. For custodial solutions, Fireblocks employs a comprehensive insurance policy up to $30M that covers assets in storage, transfer and E&amp;O.</p>
                                 </div>
                             </div>
                         </div>
@@ -356,103 +296,6 @@
         </div><!--end row-->
     </div><!--end container-->
     <!-- Rate End -->
-
-    <!-- Testi Start -->
-    <div class="container mt-100 mt-60">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <div class="section-title mb-4 pb-2">
-                    <h4 class="title mb-4">Buyer's Review</h4>
-                    <p class="text-muted para-desc mb-0 mx-auto">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
-                </div>
-            </div><!--end col-->
-        </div><!--end row-->
-
-        <div class="row justify-content-center">
-            <div class="col-lg-9 mt-4 pt-2 text-center">
-                <div class="tiny-single-item">
-                    <div class="tiny-slide client-testi text-center">
-                        <p class="text-muted h6 fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. "</p>
-                        <img src="../static/images/client/01.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
-                        <ul class="list-unstyled mb-0 mt-3">
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                        </ul>
-                        <h6 class="text-primary">- Thomas Israel <small class="text-muted">C.E.O</small></h6>
-                    </div><!--end customer testi-->
-                    
-                    <div class="tiny-slide client-testi text-center">
-                        <p class="text-muted h6 fst-italic">" The advantage of its Latin origin and the relative meaninglessness of Lorum Ipsum is that the text does not attract attention to itself or distract the viewer's attention from the layout. "</p>
-                        <img src="../static/images/client/02.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
-                        <ul class="list-unstyled mb-0 mt-3">
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                        </ul>
-                        <h6 class="text-primary">- Carl Oliver <small class="text-muted">P.A</small></h6>
-                    </div><!--end customer testi-->
-                    
-                    <div class="tiny-slide client-testi text-center">
-                        <p class="text-muted h6 fst-italic">" There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space. These alternatives to the classic Lorem Ipsum texts are often amusing and tell short, funny or nonsensical stories. "</p>
-                        <img src="../static/images/client/03.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
-                        <ul class="list-unstyled mb-0 mt-3">
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                        </ul>
-                        <h6 class="text-primary">- Barbara McIntosh <small class="text-muted">M.D</small></h6>
-                    </div><!--end customer testi-->
-                    
-                    <div class="tiny-slide client-testi text-center">
-                        <p class="text-muted h6 fst-italic">" According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero in 45 BC. Allegedly, a Latin scholar established the origin of the text by compiling all the instances of the unusual word 'consectetur' he could find "</p>
-                        <img src="../static/images/client/04.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
-                        <ul class="list-unstyled mb-0 mt-3">
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                        </ul>
-                        <h6 class="text-primary">- Christa Smith <small class="text-muted">Manager</small></h6>
-                    </div><!--end customer testi-->
-                    
-                    <div class="tiny-slide client-testi text-center">
-                        <p class="text-muted h6 fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. "</p>
-                        <img src="../static/images/client/05.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
-                        <ul class="list-unstyled mb-0 mt-3">
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                        </ul>
-                        <h6 class="text-primary">- Dean Tolle <small class="text-muted">Developer</small></h6>
-                    </div><!--end customer testi-->
-                    
-                    <div class="tiny-slide client-testi text-center">
-                        <p class="text-muted h6 fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "</p>
-                        <img src="../static/images/client/06.jpg" class="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow" alt="">
-                        <ul class="list-unstyled mb-0 mt-3">
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                        </ul>
-                        <h6 class="text-primary">- Jill Webb <small class="text-muted">Designer</small></h6>
-                    </div><!--end customer testi-->
-                </div><!--end owl carousel-->
-            </div><!--end col-->
-        </div><!--end row-->
-    </div><!--end container-->
-    <!-- Testi End -->
 </section><!--end section-->
 <!-- Section End -->
 {% endblock %}
