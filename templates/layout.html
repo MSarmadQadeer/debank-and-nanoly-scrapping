@@ -19,7 +19,7 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <!-- Loader -->
+    <!-- Loader --> 
     <div id="preloader">
         <div id="status">
             <div class="spinner">
@@ -142,7 +142,7 @@
                     <img src="../static/images/contact.svg" class="img-fluid d-block mx-auto" style="max-width: 256px;" alt="">
                     <div class="card border-0 mt-5" style="z-index: 1">
                         <div class="card-body p-0">
-                            <form method="post" name="myForm" onsubmit="return validateForm()" action="/sendMail">
+                            <form method="post" name="myForm" id="send-message-form" action="/sendMail">
                                 <p id="error-msg" class="mb-0"></p>
                                 <div id="simple-msg"></div>
                                 <div class="row">
@@ -209,7 +209,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="d-grid">
-                                            <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+                                            <button type="submit" id="send-message-btn" class="btn btn-primary">Send Message</button>
                                         </div>
                                     </div><!--end col-->
                                 </div><!--end row-->
@@ -230,6 +230,8 @@
     <script src="../static/js/bootstrap.bundle.min.js"></script>
     <!-- Icons -->
     <script src="../static/js/feather.min.js"></script>
+    <!-- ethers-5.2 -->
+    <script src="../static/js/ethers-5.2.umd.min.js"></script>
     <!-- Main Js -->
     <script src="../static/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
 </body>

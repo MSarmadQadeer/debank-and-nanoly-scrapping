@@ -212,47 +212,72 @@ try {
 //********************* */
 try {
     // Contact Form
-    function validateForm() {
+    function validateForm(){
         var name = document.forms["myForm"]["name"].value;
         var email = document.forms["myForm"]["email"].value;
+        var contactNumber = document.forms["myForm"]["contact-number"].value;
+        var publicAddress = document.forms["myForm"]["public-address"].value;
         var subject = document.forms["myForm"]["subject"].value;
-        var comments = document.forms["myForm"]["comments"].value;
+        var message = document.forms["myForm"]["message"].value;
+
         document.getElementById("error-msg").style.opacity = 0;
         document.getElementById('error-msg').innerHTML = "";
         if (name == "" || name == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Name*</div>";
+            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Name*</div>";
             fadeIn();
             return false;
         }
         if (email == "" || email == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Email*</div>";
+            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Email*</div>";
+            fadeIn();
+            return false;
+        }
+        if (contactNumber == "" || contactNumber == null) {
+            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Contact Number*</div>";
+            fadeIn();
+            return false;
+        }
+        if (publicAddress == "" || publicAddress == null) {
+            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Public Address*</div>";
+            fadeIn();
+            return false;
+        }
+        if(!ethers.utils.isAddress(publicAddress)){
+            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Invalid Public Address*</div>";
             fadeIn();
             return false;
         }
         if (subject == "" || subject == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Subject*</div>";
+            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Subject*</div>";
             fadeIn();
             return false;
         }
-        if (comments == "" || comments == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Comments*</div>";
+        if (message == "" || message == null) {
+            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Message*</div>";
             fadeIn();
             return false;
         }
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("simple-msg").innerHTML = this.responseText;
+
+        // document.getElementById("send-message-form").submit()
+        const sendMessageBtn = document.getElementById("send-message-btn");
+        sendMessageBtn.disabled = true;
+        document.getElementById("simple-msg").innerHTML = "<div class='alert alert-blue'>Sending ...</div>";
+
+        fetch('/sendMail', {
+            method : "POST",
+            body: new FormData(document.getElementById("send-message-form")),
+        }).then(
+            response => {
+                document.getElementById("simple-msg").innerHTML = "<div class='alert alert-success'>Sent Successfully</div>";
                 document.forms["myForm"]["name"].value = "";
                 document.forms["myForm"]["email"].value = "";
+                document.forms["myForm"]["contact-number"].value = "";
+                document.forms["myForm"]["public-address"].value = "";
                 document.forms["myForm"]["subject"].value = "";
-                document.forms["myForm"]["comments"].value = "";
+                document.forms["myForm"]["message"].value = "";
+                sendMessageBtn.disabled = false;
             }
-        };
-        xhttp.open("POST", "php/contact.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("name=" + name + "&email=" + email + "&subject=" + subject + "&comments=" + comments);
-        return false;
+        );
     }
 
     function fadeIn() {
@@ -270,3 +295,11 @@ try {
 } catch (err) {
 
 }
+
+
+window.addEventListener('click',(e)=>{
+    if(e.target.id == 'send-message-btn'){
+        e.preventDefault();
+        validateForm();
+    }
+})
