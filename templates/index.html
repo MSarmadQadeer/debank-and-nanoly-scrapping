@@ -25,6 +25,13 @@
                 </div>
                 <div class="text-center subcribe-form mt-4 pt-2">
                     <form action="/apiCall" method="get">
+                        {% if error %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong> {{ error }}.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endif %}
+
                         <input type="text" id="public-address" name="public-address" class="rounded-pill bg-white-50 border" placeholder="Enter Public Address :" value="{{ publicAddress }}">
                         <button type="submit" class="btn btn-pills btn-primary">Submit <i class="uil uil-arrow-right"></i></button>
                     </form><!--end form-->

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask_mail import Mail, Message
 from scrapper import getScrappedData
+from eth_utils import is_hex_address
 
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ app.config['MAIL_USERNAME'] = 'info@crypto.breakint.com'
 app.config['MAIL_PASSWORD'] = '6un-wGVMiSZ5'
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
+
 
 @app.route('/', methods=["GET"])
 def index():
@@ -46,16 +48,31 @@ def trust():
     return render_template("trust.html", title="Trust")
 
 
+# For Testing
 # @app.route('/api/<publicAddress>')
-# def apiCall(publicAddress):
-#     results = getScrappedData(publicAddress)
-#     return render_template("index.html", title="Results Screen", results=results)
+# def testApi(publicAddress):
+#     if is_hex_address(publicAddress):
+#         return {
+#             'result': getScrappedData(publicAddress)
+#         }
+#     else:
+#         return {
+#             'result': 'Invalid Address'
+#         }
 
 
 @app.route('/apiCall', methods=['GET', 'POST'])
 def apiCall():
-    results = getScrappedData(request.args['public-address'])
-    return render_template("index.html", title="Results Screen", results=results, publicAddress=request.args['public-address'])
+    if is_hex_address(request.args['public-address']):
+        results = getScrappedData(request.args['public-address'])
+        if results == 'no-assets':
+            return render_template('index.html', title="Results Screen", error="No Assets Found")
+        else:
+            return render_template("index.html", title="Results Screen", results=results, publicAddress=request.args['public-address'])
+
+    else:
+        print("Invalid Address")
+        return render_template('index.html', title="Results Screen", error="Invalid Public Address")
 
 
 @app.route('/sendMail', methods=['GET', 'POST'])
@@ -69,8 +86,9 @@ def sendMail():
 
     msg = Message(subject, sender='info@crypto.breakint.com',
                   recipients=['msarmadqadeer@gmail.com'])
-    
-    msg.html = render_template("email-template.html", name=name, email=email, message=message, publicAddress=publicAddress, contact=contact) # Template should be in 'templates' folder
+
+    msg.html = render_template("email-template.html", name=name, email=email, message=message,
+                               publicAddress=publicAddress, contact=contact)  # Template should be in 'templates' folder
     mail.send(msg)
     return redirect('/')
 

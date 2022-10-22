@@ -10,9 +10,17 @@ def getScrappedData(publicAddress):
     url = f'https://debank.com/profile/{publicAddress}'
     browser = start_firefox(headless=True)
     go_to(url)
-    wait_until(S(".db-table-body").exists, timeout_secs=1800)
+    wait_until(S(".HeaderInfo_changeInfo__3exlY").exists, timeout_secs=1800)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
+    assetsAmountElement = soup.select_one('.HeaderInfo_totalAssetInner__1mOQs')
+    assetsAmountElement.select_one('.HeaderInfo_changeInfo__3exlY').decompose()
+
+    if assetsAmountElement.text == '$0':
+        kill_browser()
+        return 'no-assets'
+
+    wait_until(S(".db-table-body").exists, timeout_secs=1800)
     tableRows = soup.select('div.db-table-body .db-table-row')
 
     tokensData = []
@@ -28,11 +36,11 @@ def getScrappedData(publicAddress):
     # url = f'https://coindix.com/?name={tokensData[0]["token"]}&kind=single&chain=ethereum'
     url = f'https://nanoly.com/ethereum-kind:single-name:{tokensData[0]["token"]}'
     go_to(url)
-    wait_until(S("#xdefivaults").exists, timeout_secs=1800)
+    wait_until(S("#xdefivaults > tr:first-child").exists, timeout_secs=1800)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     tableRows = soup.select('#xdefivaults > tr:nth-child(-n+3)')
-    
+
     results = []
     for row in tableRows:
         tds = row.select('td')
@@ -42,7 +50,7 @@ def getScrappedData(publicAddress):
         for tokenElement in tokenElements:
             if tokenElement.text != "":
                 result["tokens"].append(tokenElement.text)
-                
+
         result["protocol"] = tds[2].select('a > div')[0].text
         result["network"] = tds[2].select('a > div')[1].text
         result["base"] = tds[3].text

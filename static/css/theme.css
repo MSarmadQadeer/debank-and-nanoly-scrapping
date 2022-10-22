@@ -1258,15 +1258,15 @@ button:not(:disabled) {
   border-color: #2eca8b;
 }
 
-.alert-warning {
+/* .alert-warning {
   background-color: rgba(241, 116, 37, 0.9);
   color: #ffffff;
   border-color: #f17425;
-}
+} */
 
-.alert-warning .alert-link {
+/* .alert-warning .alert-link {
   color: #753208;
-}
+} */
 
 .alert-outline-warning {
   background-color: #ffffff;
@@ -1764,7 +1764,7 @@ button:not(:disabled) {
 
 .subcribe-form button {
   position: absolute;
-  top: 2px;
+  bottom: 2px;
   right: 3px;
   outline: none !important;
 }
