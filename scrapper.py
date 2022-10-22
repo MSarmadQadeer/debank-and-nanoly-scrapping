@@ -10,7 +10,7 @@ def getScrappedData(publicAddress):
     url = f'https://debank.com/profile/{publicAddress}'
     browser = start_firefox(headless=True)
     go_to(url)
-    wait_until(S(".db-table-body").exists, timeout_secs=60)
+    wait_until(S(".db-table-body").exists, timeout_secs=1800)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     tableRows = soup.select('div.db-table-body .db-table-row')
@@ -28,7 +28,7 @@ def getScrappedData(publicAddress):
     # url = f'https://coindix.com/?name={tokensData[0]["token"]}&kind=single&chain=ethereum'
     url = f'https://nanoly.com/ethereum-kind:single-name:{tokensData[0]["token"]}'
     go_to(url)
-    wait_until(S("#xdefivaults").exists, timeout_secs=20)
+    wait_until(S("#xdefivaults").exists, timeout_secs=1800)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     tableRows = soup.select('#xdefivaults > tr:nth-child(-n+3)')
