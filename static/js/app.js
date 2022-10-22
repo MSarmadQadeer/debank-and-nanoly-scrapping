@@ -261,14 +261,14 @@ try {
         // document.getElementById("send-message-form").submit()
         const sendMessageBtn = document.getElementById("send-message-btn");
         sendMessageBtn.disabled = true;
-        document.getElementById("simple-msg").innerHTML = "<div class='alert alert-blue'>Sending ...</div>";
+        document.getElementById("simple-msg").innerHTML = "<div class='alert alert-blue info_message'>Sending</div>";
 
         fetch('/sendMail', {
             method : "POST",
             body: new FormData(document.getElementById("send-message-form")),
         }).then(
             response => {
-                document.getElementById("simple-msg").innerHTML = "<div class='alert alert-success'>Sent Successfully</div>";
+                document.getElementById("simple-msg").innerHTML = "<div class='alert alert-success success_message'>Sent Successfully</div>";
                 document.forms["myForm"]["name"].value = "";
                 document.forms["myForm"]["email"].value = "";
                 document.forms["myForm"]["contact-number"].value = "";

@@ -8407,6 +8407,8 @@ p {
 }
 
 .error_message,
+.success_message,
+.info_message,
 #success_page {
   padding: 10px;
   margin-bottom: 20px;
@@ -8418,6 +8420,20 @@ p {
   background-color: rgba(240, 115, 90, 0.1) !important;
   border: 2px solid rgba(240, 115, 90, 0.1) !important;
   color: #f0735a !important;
+  font-size: 14px;
+}
+
+.success_message {
+  background-color: rgba(0, 200, 81, 0.1) !important;
+  border: 2px solid rgba(0, 200, 81, 0.1) !important;
+  color: #00c851 !important;
+  font-size: 14px;
+}
+
+.info_message {
+  background-color: rgba(0, 188, 212, 0.1) !important;
+  border: 2px solid rgba(0, 188, 212, 0.1) !important;
+  color: #00bcd4 !important;
   font-size: 14px;
 }
 
