@@ -6,10 +6,10 @@
 {% block logo %}
 <a class="logo" href="/">
     <span class="logo-light-mode">
-        <img src="../static/images/logo-dark.png" class="l-dark" height="24" alt="">
-        <img src="../static/images/logo-light.png" class="l-light" height="24" alt="">
+        <img src="{{ url_for('static', filename='images/logo-dark.png') }}" class="l-dark" height="24" alt="">
+        <img src="{{ url_for('static', filename='images/logo-light.png') }}" class="l-light" height="24" alt="">
     </span>
-    <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-light.png') }}" height="24" class="logo-dark-mode" alt="">
 </a>
 {% endblock %}
 
@@ -20,7 +20,7 @@
         <div class="row mt-5 mt-sm-0 justify-content-center">
             <div class="col-lg-10">
                 <div class="title-heading text-center">
-                    <img src="../static/images/crypto.svg" height="136" class="mover" alt="">
+                    <img src="{{ url_for('static', filename='images/crypto.svg') }}" height="136" class="mover" alt="">
                     <h1 class="heading text-primary text-shadow-title mt-4 mb-3">Know Your Token's Best Yields!</h1>
                 </div>
                 <div class="text-center subcribe-form mt-4 pt-2">
@@ -67,7 +67,7 @@
                             <tr>
                                 <th class="p-3">
                                     <div class="align-items-center">
-                                        <img src="../static/images/ethereum.png" class="me-3" height="32" alt="">
+                                        <img src="{{ url_for('static', filename='images/ethereum.png') }}" class="me-3" height="32" alt="">
                                         <p class="mt-2 d-inline fw-normal h6">Ethereum <span class="text-muted">{{ result.tokens[0] }}</span> </p>
                                     </div>
                                 </th>
@@ -101,7 +101,7 @@
         <div class="row align-items-center">
             <div class="col-lg-5 col-md-6">
                 <div class="position-relative">
-                    <img src="../static/images/about.jpg" class="img-fluid mx-auto d-block shadow rounded" alt="">
+                    <img src="{{ url_for('static', filename='images/about.jpg') }}" class="img-fluid mx-auto d-block shadow rounded" alt="">
                 </div>
             </div><!--end col-->
 
@@ -159,7 +159,7 @@
             <div class="col-md-8 col-12 mt-4 pt-2">
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade bg-white show active p-4 rounded shadow" id="dental" role="tabpanel" aria-labelledby="dentalcare">
-                        <img src="../static/images/clients.jpg" class="img-fluid rounded shadow" alt="">
+                        <img src="{{ url_for('static', filename='images/clients.jpg') }}" class="img-fluid rounded shadow" alt="">
                         <div class="mt-4">
                             <h5 class="mb-4">Built for Bitcoin Billionaires</h5>
 
@@ -179,7 +179,7 @@
                     </div><!--end teb pane-->
                     
                     <div class="tab-pane fade bg-white p-4 rounded shadow" id="cardeo" role="tabpanel" aria-labelledby="cardeography">
-                        <img src="../static/images/institutions.jpg" class="img-fluid rounded shadow" alt="">
+                        <img src="{{ url_for('static', filename='images/institutions.jpg') }}" class="img-fluid rounded shadow" alt="">
                         <div class="mt-4">
                             <h5 class="mb-4">Built for Institutions</h5>
                             <p class="text-muted mb-3">As a trusted cryptocurrency private wealth manager, our singular goal is to provide the most reliable, high touch, high quality solution for our institutional clients who want exposure to cryptocurrency with minimal risk. We beat traditional financial service institutions, who are typically slow to adopt new and innovative approaches, who are not incentivized to respond to their customers’ ever-changing needs, and who aren’t working to win your business and your trust every day. Whether you have a hefty balance sheet to manage, looking for arbitrage opportunities, or looking for tax optimization, you can turn to Level to help manage your goals, no matter how complex they may be. We have the expertise to understand your needs, because as investors we experience the same complexities.</p>
@@ -187,7 +187,7 @@
                     </div><!--end teb pane-->
 
                     <div class="tab-pane fade bg-white p-4 rounded shadow" id="eye" role="tabpanel" aria-labelledby="eyecare">
-                        <img src="../static/images/partners.jpg" class="img-fluid rounded shadow" alt="">
+                        <img src="{{ url_for('static', filename='images/partners.jpg') }}" class="img-fluid rounded shadow" alt="">
                         <div class="mt-4">
                             <h5 class="mb-4">Built for Partners</h5>
                             <p class="text-muted mb-3">Iqcapital is a one stop shop for the Crypto Asset Management Revolution. Together with our partners - the technology companies and financial institutions pioneering the blockchain technology movement - we are rebuilding the world of finance. Level has pioneered many asset management techniques that are more common to traditional financial services, and adapted it to cryptocurrency portfolio management. We turn blockchain projects into investable assets so our partners don’t have to take risks they don’t want to or spend money they don’t have.</p>

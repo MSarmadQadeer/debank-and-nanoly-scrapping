@@ -5,8 +5,8 @@
 
 {% block logo %}
 <a class="logo" href="/">
-    <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
-    <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-dark.png') }}" height="24" class="logo-light-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-light.png') }}" height="24" class="logo-dark-mode" alt="">
 </a>
 {% endblock %}
 
@@ -62,7 +62,7 @@
                         <p class="text-muted">We founded Iqcapital with a “trust-first” mentality. We have worked hard to provide you with a high-integrity choice and we look forward to earning and maintaining your trust. </p>
                         <p class="text-muted mb-5">We are subject to capital reserve requirements, cybersecurity requirements, and compliance standards.</p>
 
-                        <img src="../static/images/crypto-insight-image2.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <img src="{{ url_for('static', filename='images/crypto-insight-image2.jpg') }}" class="img-fluid rounded-top w-100" alt="">
                         
                         <h6 class="text-primary mt-5 mb-4">JOIN IQCAPITAL AS THE FIRST CRYPTOCURRENCY PRIVATE WEALTH MANAGEMENT FIRM</h6>
                         <p class="text-muted mt-3">Your time is precious, and your cryptocurrency assets are under more pressure than ever. In this environment, you may not have had time to give discretionary asset management the serious attention it deserves.</p>

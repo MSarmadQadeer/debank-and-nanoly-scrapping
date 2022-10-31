@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="../static/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
     <!-- Bootstrap -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <!-- Icons -->
-    <link href="../static/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     <!-- Main Css -->
-    <link href="../static/css/theme.css" rel="stylesheet" type="text/css" id="theme-opt" />
-    <link href="../static/css/colors/green.css" rel="stylesheet" id="color-opt">
-
+    <link rel="stylesheet" type="text/css" id="theme-opt" href="{{ url_for('static', filename='css/theme.css') }}">
+    <link rel="stylesheet" id="color-opt" href="{{ url_for('static', filename='css/colors/green.css') }}">
+    
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -87,7 +87,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
                                 <a href="/" class="logo-footer">
-                                    <img src="../static/images/logo-light.png" height="24" alt="">
+                                    <img src="{{ url_for('static', filename='images/logo-light.png') }}" height="24" alt="">
                                 </a>
                                 <p class="mt-4">You were smart enough to build your net worth, we are qualified to keep it there.</p>
                             </div><!--end col-->
@@ -131,15 +131,15 @@
     <div class="offcanvas offcanvas-end bg-white shadow" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header p-4 border-bottom">
             <h5 id="offcanvasRightLabel" class="mb-0">
-                <img src="../static/images/logo-dark.png" height="24" class="light-version" alt="">
-                <img src="../static/images/logo-light.png" height="24" class="dark-version" alt="">
+                <img src="{{ url_for('static', filename='images/logo-dark.png') }}" height="24" class="light-version" alt="">
+                <img src="{{ url_for('static', filename='images/logo-light.png') }}" height="24" class="dark-version" alt="">
             </h5>
             <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="offcanvas" aria-label="Close"><i class="uil uil-times fs-4"></i></button>
         </div>
         <div class="offcanvas-body p-4">
             <div class="row">
                 <div class="col-12">
-                    <img src="../static/images/contact.svg" class="img-fluid d-block mx-auto" style="max-width: 256px;" alt="">
+                    <img src="{{ url_for('static', filename='images/contact.svg') }}" class="img-fluid d-block mx-auto" style="max-width: 256px;" alt="">
                     <div class="card border-0 mt-5" style="z-index: 1">
                         <div class="card-body p-0">
                             <form method="post" name="myForm" id="send-message-form" action="/sendMail">
@@ -227,12 +227,12 @@
     <!-- Back to top -->
 
     <!-- javascript -->
-    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <!-- Icons -->
-    <script src="../static/js/feather.min.js"></script>
+    <script src="{{ url_for('static', filename='js/feather.min.js') }}"></script>
     <!-- ethers-5.2 -->
-    <script src="../static/js/ethers-5.2.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='js/ethers-5.2.umd.min.js') }}"></script>
     <!-- Main Js -->
-    <script src="../static/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
 </body>
 </html>

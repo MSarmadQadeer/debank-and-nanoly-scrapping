@@ -3,8 +3,8 @@
 
 {% block logo %}
 <a class="logo" href="/">
-    <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
-    <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-dark.png') }}" height="24" class="logo-light-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-light.png') }}" height="24" class="logo-dark-mode" alt="">
 </a>
 {% endblock %}
 
@@ -48,7 +48,7 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="position-relative me-lg-5">
-                    <img src="../static/images/revenue.svg" class="img-fluid" alt="">
+                    <img src="{{ url_for('static', filename='images/revenue.svg') }}" class="img-fluid" alt="">
                 </div>
             </div><!--end col-->
 
@@ -80,7 +80,7 @@
             </div><!--end col-->
 
             <div class="col-lg-5 order-1 order-md-2">
-                <img src="../static/images/profit.svg" class="img-fluid" alt="">
+                <img src="{{ url_for('static', filename='images/profit.svg') }}" class="img-fluid" alt="">
             </div><!--end col-->
         </div><!--end row-->
     </div><!--end container-->

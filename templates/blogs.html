@@ -5,15 +5,15 @@
 
 {% block logo %}
 <a class="logo" href="/">
-    <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
-    <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-dark.png') }}" height="24" class="logo-light-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-light.png') }}" height="24" class="logo-dark-mode" alt="">
 </a>
 {% endblock %}
 
 {% block body %}
 <!-- Hero Start -->
 <section class="home-slider position-relative">
-    <div class="bg-home-75vh d-flex align-items-center" style="background: url('../static/images/bg2.jpg') center center;">
+    <div class="bg-home-75vh d-flex align-items-center" style="background: url('/static/images/bg2.jpg') center center;">
         <div class="bg-overlay"></div>
         <div class="container">
             <div class="row mt-5 justify-content-center">
@@ -51,7 +51,7 @@
             <div class="col-lg-4 col-md-6 mt-4 pt-2">
                 <div class="card blog blog-primary rounded border-0 shadow overflow-hidden">
                     <div class="position-relative">
-                        <img src="../static/images/crypto-blog-image.jpg" class="card-img-top" alt="...">
+                        <img src="{{ url_for('static', filename='images/crypto-blog-image.jpg') }}" class="card-img-top" alt="...">
                         <div class="overlay rounded-top"></div>
                     </div>
                     <div class="card-body content">

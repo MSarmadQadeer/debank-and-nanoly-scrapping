@@ -5,8 +5,8 @@
 
 {% block logo %}
 <a class="logo" href="/">
-    <img src="../static/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
-    <img src="../static/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-dark.png') }}" height="24" class="logo-light-mode" alt="">
+    <img src="{{ url_for('static', filename='images/logo-light.png') }}" height="24" class="logo-dark-mode" alt="">
 </a>
 {% endblock %}
 
@@ -58,7 +58,7 @@
                 <div class="card blog blog-detail border-0 shadow rounded">
                     <div class="card-body content">
                         <p class="text-muted mt-3 mb-5">If you ask someone if they know what Bitcoin is, they will probably say yes. But if you ask them to explain it, they may suddenly remember an appointment they have to get to immediately. Even seasoned investors are often reluctant to buy crypto because they’re not sure how it works. Cryptocurrency didn’t exist until 2008, so it’s harder for people to comprehend than a more familiar system, like buying stocks and bonds through the stock market. Bitcoin is the most well-known cryptocurrency and has the highest trading volume, and the entire blockchain industry is built on the fundamentals of the original Bitcoin whitepaper. </p>
-                        <img src="../static/images/crypto-blog-image.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <img src="{{ url_for('static', filename='images/crypto-blog-image.jpg') }}" class="img-fluid rounded-top w-100" alt="">
                         
                         <h6 class="text-primary mt-5 mb-4">WHERE DOES BITCOIN COME FROM?</h6>
                         <p class="text-muted mt-3">Bitcoins are produced through a process called mining. Similarly to how miners in the California gold rush sifted through dirt to find gleaming nuggets, Bitcoin miners sift through complicated mathematical puzzles. Or, more accurately, their computers do, as the complicated problems can only be decrypted by robust computer hardware. The puzzles that they solve are the encryption that keeps a Bitcoin transaction secure. </p>
