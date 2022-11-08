@@ -39,7 +39,15 @@ def getScrappedData(publicAddress):
     wait_until(S("#xdefivaults > tr:first-child").exists, timeout_secs=1800)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
+
     tableRows = soup.select('#xdefivaults > tr:nth-child(-n+3)')
+    if len(tableRows) == 0:
+        tableRows = soup.select('#xdefivaults > tr:nth-child(-n+2)')
+        if len(tableRows) == 0:
+            tableRows = soup.select('#xdefivaults > tr:nth-child(1)')
+            if len(tableRows) == 0:
+                kill_browser()
+                return 'no-assets'
 
     results = []
     for row in tableRows:
