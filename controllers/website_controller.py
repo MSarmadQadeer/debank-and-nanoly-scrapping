@@ -85,11 +85,15 @@ def sendMail():
     message = request.form['message']
     publicAddress = request.form['public-address']
     contact = request.form['contact-number']
+    baseUrl = request.base_url
+    baseUrl = baseUrl.split('/')[:-1]
+    baseUrl = '/'.join(baseUrl)
+    # print("Base url: ", baseUrl)
 
     msg = Message(subject, sender='info@iqcapital.io',
                   recipients=['msarmadqadeer@gmail.com'])
 
     msg.html = render_template("email-template.html", name=name, email=email, message=message,
-                               publicAddress=publicAddress, contact=contact)  # Template should be in 'templates' folder
+                               publicAddress=publicAddress, contact=contact, baseUrl=baseUrl)  # Template should be in 'templates' folder
     mail.send(msg)
     return redirect('/')
