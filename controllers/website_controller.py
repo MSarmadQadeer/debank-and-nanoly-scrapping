@@ -91,7 +91,7 @@ def sendMail():
     # print("Base url: ", baseUrl)
 
     msg = Message(subject, sender='info@iqcapital.io',
-                  recipients=['msarmadqadeer@gmail.com'])
+                  recipients=['marketing@iqcapital.io'])
 
     msg.html = render_template("email-template.html", name=name, email=email, message=message,
                                publicAddress=publicAddress, contact=contact, baseUrl=baseUrl)  # Template should be in 'templates' folder
