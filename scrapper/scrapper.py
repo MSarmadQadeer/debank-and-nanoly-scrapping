@@ -86,6 +86,7 @@ def getScrappedData(publicAddress):
         # print('\n')
 
     kill_browser()
+    results.sort(key=lambda x: float(x['APY'][:-1]), reverse=True)
     return results
 
 
