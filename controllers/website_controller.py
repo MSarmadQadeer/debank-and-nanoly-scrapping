@@ -6,11 +6,12 @@ from eth_utils import is_hex_address
 
 
 # Email Configuration
-app.config['MAIL_SERVER'] = 'crypto.breakint.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'info@crypto.breakint.com'
-app.config['MAIL_PASSWORD'] = '6un-wGVMiSZ5'
-app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = 'nadim.hafez@gmail.com'
+app.config['MAIL_PASSWORD'] = 'mvpbdxtmcctiwpyf'
+app.config['MAIL_USE_TLS'] = True
+# app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
 
@@ -85,7 +86,7 @@ def sendMail():
     publicAddress = request.form['public-address']
     contact = request.form['contact-number']
 
-    msg = Message(subject, sender='info@crypto.breakint.com',
+    msg = Message(subject, sender='info@iqcapital.io',
                   recipients=['msarmadqadeer@gmail.com'])
 
     msg.html = render_template("email-template.html", name=name, email=email, message=message,
