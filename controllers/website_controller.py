@@ -25,16 +25,6 @@ def about():
     return render_template("about.html", title="About Us")
 
 
-@app.route('/blogs', methods=["GET"])
-def blogs():
-    return render_template("blogs.html", title="Blogs")
-
-
-@app.route('/blogs/cryptocurrency-investing-beginners-guide', methods=["GET"])
-def cryptocurrencyInvestingBeginnersGuide():
-    return render_template("cryptocurrency-investing-beginners-guide.html", title="Cryptocurrency Investing")
-
-
 @app.route('/insights', methods=["GET"])
 def insights():
     return render_template("insights.html", title="Insights")
