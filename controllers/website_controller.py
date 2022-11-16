@@ -55,35 +55,42 @@ def trust():
 
 @app.route('/apiCall', methods=['GET', 'POST'])
 def apiCall():
-    if is_hex_address(request.args['public-address']):
-        results = getScrappedData(request.args['public-address'])
-        if results == 'no-assets':
-            return render_template('index.html', title="Results Screen", error="No Assets Found")
-        else:
-            return render_template("index.html", title="Results Screen", results=results, publicAddress=request.args['public-address'])
+    try:
+        if is_hex_address(request.args['public-address']):
+            results = getScrappedData(request.args['public-address'])
+            if results == 'no-assets':
+                return render_template('index.html', title="Results Screen", error="No Assets Found")
+            else:
+                return render_template("index.html", title="Results Screen", results=results, publicAddress=request.args['public-address'])
 
-    else:
-        print("Invalid Address")
-        return render_template('index.html', title="Results Screen", error="Invalid Public Address")
+        else:
+            print("Invalid Address")
+            return render_template('index.html', title="Results Screen", error="Invalid Public Address")
+    except Exception as e:
+        return str(e)
 
 
 @app.route('/sendMail', methods=['GET', 'POST'])
 def sendMail():
-    name = request.form['name']
-    email = request.form['email']
-    subject = request.form['subject']
-    message = request.form['message']
-    publicAddress = request.form['public-address']
-    contact = request.form['contact-number']
-    baseUrl = request.base_url
-    baseUrl = baseUrl.split('/')[:-1]
-    baseUrl = '/'.join(baseUrl)
-    # print("Base url: ", baseUrl)
+    try:
+        name = request.form['name']
+        email = request.form['email']
+        subject = request.form['subject']
+        message = request.form['message']
+        publicAddress = request.form['public-address']
+        contact = request.form['contact-number']
+        baseUrl = request.base_url
+        baseUrl = baseUrl.split('/')[:-1]
+        baseUrl = '/'.join(baseUrl)
+        # print("Base url: ", baseUrl)
 
-    msg = Message(subject, sender='info@iqcapital.io',
-                  recipients=['marketing@iqcapital.io'])
+        msg = Message(subject, sender='info@iqcapital.io',
+                    recipients=['marketing@iqcapital.io'])
 
-    msg.html = render_template("email-template.html", name=name, email=email, message=message,
-                               publicAddress=publicAddress, contact=contact, baseUrl=baseUrl)  # Template should be in 'templates' folder
-    mail.send(msg)
-    return redirect('/')
+        msg.html = render_template("email-template.html", name=name, email=email, message=message,
+                                publicAddress=publicAddress, contact=contact, baseUrl=baseUrl)  # Template should be in 'templates' folder
+        mail.send(msg)
+        return redirect('/')
+    
+    except Exception as e:
+        return str(e)
