@@ -302,4 +302,12 @@ window.addEventListener('click',(e)=>{
         e.preventDefault();
         validateForm();
     }
+    else if(e.target.id == 'public-address-submit-btn'){
+        e.preventDefault();
+        const publicAddressSubmitBtn = e.target;
+        publicAddressSubmitBtn.disabled = true;
+        publicAddressSubmitBtn.querySelector('span').classList.remove('d-none');
+
+        e.target.parentElement.submit();
+    }
 })

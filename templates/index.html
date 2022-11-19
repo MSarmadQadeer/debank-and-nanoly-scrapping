@@ -21,7 +21,7 @@
             <div class="col-lg-10">
                 <div class="title-heading text-center">
                     <img src="{{ url_for('static', filename='images/crypto.svg') }}" height="136" class="mover" alt="">
-                    <h1 class="heading text-primary text-shadow-title mt-4 mb-3">Know Your Token's Best Yields!</h1>
+                    <h1 class="heading text-primary text-shadow-title mt-4 mb-5">Know Your Token's Best Yields!</h1>
                 </div>
                 <div class="text-center subcribe-form mt-4 pt-2">
                     <form action="/apiCall" method="get">
@@ -33,12 +33,15 @@
                         {% endif %}
 
                         <input type="text" id="public-address" name="public-address" class="rounded-pill bg-white-50 border" placeholder="Enter Public Address :" value="{{ publicAddress }}">
-                        <button type="submit" class="btn btn-pills btn-primary">Submit <i class="uil uil-arrow-right"></i></button>
+                        <button id="public-address-submit-btn" class="btn btn-pills btn-primary" type="submit">
+                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                            Submit <i class="uil uil-arrow-right"></i>
+                        </button>
                     </form><!--end form-->
                 </div>
             </div><!--end col-->
         </div><!--end row-->
-    </div><!--end container--> 
+    </div><!--end container-->
 </section><!--end section-->
 <!-- Hero End -->
 
@@ -63,7 +66,7 @@
                         </thead>
 
                         <tbody>
-                            {% for result in results %}  
+                            {% for result in results %}
                             <tr>
                                 <th class="p-3">
                                     <div class="align-items-center">
@@ -93,7 +96,7 @@
     <!-- Table End -->
 </section><!--end section-->
 <!-- Section END -->
-{% endif %}  
+{% endif %}
 
 <!-- Start -->
 <section class="section">
@@ -137,7 +140,7 @@
                             </div>
                         </a><!--end nav link-->
                     </li><!--end nav item-->
-                    
+
                     <li class="nav-item mt-2">
                         <a class="nav-link rounded" id="cardeography" data-bs-toggle="pill" href="#cardeo" role="tab" aria-controls="cardeo" aria-selected="false">
                             <div class="text-start py-1 px-2">
@@ -145,7 +148,7 @@
                             </div>
                         </a><!--end nav link-->
                     </li><!--end nav item-->
-                    
+
                     <li class="nav-item mt-2">
                         <a class="nav-link rounded" id="eyecare" data-bs-toggle="pill" href="#eye" role="tab" aria-controls="eye" aria-selected="false">
                             <div class="text-start py-1 px-2">
@@ -174,10 +177,10 @@
 
                             <p class="text-primary mb-1 fw-bold">Enhanced portfolio reporting and tax documentation</p>
                             <p class="text-muted mb-3">We start with an in-depth analysis of your needs, expectations and risk tolerance, so we can work together to optimize your portfolio. We work with you over time, and are always available to discuss your portfolio.</p>
-                            
+
                         </div>
                     </div><!--end teb pane-->
-                    
+
                     <div class="tab-pane fade bg-white p-4 rounded shadow" id="cardeo" role="tabpanel" aria-labelledby="cardeography">
                         <img src="{{ url_for('static', filename='images/institutions.jpg') }}" class="img-fluid rounded shadow" alt="">
                         <div class="mt-4">
@@ -244,7 +247,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item rounded mt-2">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
