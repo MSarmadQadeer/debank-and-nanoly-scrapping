@@ -36,10 +36,16 @@ def getScrappedData(publicAddress):
     # url = f'https://coindix.com/?name={tokensData[0]["token"]}&kind=single&chain=ethereum'
     url = f'https://nanoly.com/ethereum-kind:single-name:{tokensData[0]["token"]}'
     go_to(url)
-    wait_until(S("#xdefivaults > tr:first-child").exists, timeout_secs=1800)
 
+    wait_until(S("#xdefivaults").exists, timeout_secs=1800)
     soup = BeautifulSoup(browser.page_source, 'html.parser')
+    if (soup.select_one('#xdefivaults > td').text == 'No results for those filters...'):
+        print('no vaults')
+        kill_browser()
+        return 'no-assets'
 
+    wait_until(S("#xdefivaults > tr:first-child").exists, timeout_secs=1800)
+    soup = BeautifulSoup(browser.page_source, 'html.parser')
     tableRows = soup.select('#xdefivaults > tr:nth-child(-n+3)')
     if len(tableRows) == 0:
         tableRows = soup.select('#xdefivaults > tr:nth-child(-n+2)')
