@@ -36,11 +36,18 @@ def getScrappedData(publicAddress):
     # url = f'https://coindix.com/?name={tokensData[0]["token"]}&kind=single&chain=ethereum'
     url = f'https://nanoly.com/ethereum-kind:single-name:{tokensData[0]["token"]}'
     go_to(url)
+    wait_until(S("#xdefivaults td").exists, timeout_secs=1800)
 
-    wait_until(S("#xdefivaults").exists, timeout_secs=1800)
+    # This check checks the absence of content and loading image
+    # And waits for the loading image to load
+    if not S("#xdefivaults > tr:first-child").exists and not Text("No results for those filters...").exists and not S("#xdefivaults td img").exists:
+        wait_until(S("#xdefivaults td img").exists, timeout_secs=1800)
+
+    # It waits for the loading image to disappear
+    wait_until(lambda: not S("#xdefivaults td img").exists(), timeout_secs=1800)
+
     soup = BeautifulSoup(browser.page_source, 'html.parser')
-    if (soup.select_one('#xdefivaults > td').text == 'No results for those filters...'):
-        print('no vaults')
+    if (soup.select_one('#xdefivaults > td:first-child') is not None and soup.select_one('#xdefivaults > td:first-child').text == 'No results for those filters...'):
         kill_browser()
         return 'no-assets'
 
