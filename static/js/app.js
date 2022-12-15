@@ -23,12 +23,12 @@
  ================================*/
 
 
-window.addEventListener('load',   fn , false )
+window.addEventListener('load', fn, false)
 
 //  window.onload = function loader() {
 function fn() {
     // Preloader
-    if(document.getElementById('preloader')){
+    if (document.getElementById('preloader')) {
         setTimeout(() => {
             document.getElementById('preloader').style.visibility = 'hidden';
             document.getElementById('preloader').style.opacity = '0';
@@ -117,11 +117,11 @@ function activateMenu() {
 }
 
 // Clickable Menu
-if(document.getElementById("navigation")){
+if (document.getElementById("navigation")) {
     var elements = document.getElementById("navigation").getElementsByTagName("a");
-    for(var i = 0, len = elements.length; i < len; i++) {
+    for (var i = 0, len = elements.length; i < len; i++) {
         elements[i].onclick = function (elem) {
-            if(elem.target.getAttribute("href") === "javascript:void(0)") {
+            if (elem.target.getAttribute("href") === "javascript:void(0)") {
                 var submenu = elem.target.nextElementSibling.nextElementSibling;
                 submenu.classList.toggle('open');
             }
@@ -132,7 +132,7 @@ if(document.getElementById("navigation")){
 // Menu sticky
 function windowScroll() {
     const navbar = document.getElementById("topnav");
-    if(navbar!=null){
+    if (navbar != null) {
         if (
             document.body.scrollTop >= 50 ||
             document.documentElement.scrollTop >= 50
@@ -156,7 +156,7 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-    if(mybutton!=null){
+    if (mybutton != null) {
         if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
             mybutton.style.display = "block";
         } else {
@@ -189,7 +189,7 @@ feather.replace();
 
 // dd-menu
 var ddmenu = document.getElementsByClassName("dd-menu");
-for(var i = 0, len = ddmenu.length; i < len; i++) {
+for (var i = 0, len = ddmenu.length; i < len; i++) {
     ddmenu[i].onclick = function (elem) {
         elem.stopPropagation();
     }
@@ -198,90 +198,97 @@ for(var i = 0, len = ddmenu.length; i < len; i++) {
 //Tooltip
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
+    return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
 //small menu
 try {
     var spy = new Gumshoe('#navmenu-nav a');
-}catch(err) {
-    
+} catch (err) {
+
 }
 //********************* */
 /*     Contact us       */
 //********************* */
 try {
     // Contact Form
-    function validateForm(){
-        var name = document.forms["myForm"]["name"].value;
-        var email = document.forms["myForm"]["email"].value;
-        var contactNumber = document.forms["myForm"]["contact-number"].value;
-        var publicAddress = document.forms["myForm"]["public-address"].value;
-        var subject = document.forms["myForm"]["subject"].value;
-        var message = document.forms["myForm"]["message"].value;
+    function validateForm(e) {
+        var name = e.target.closest('form').querySelector('[name=name]').value || ''
+        var email = e.target.closest('form').querySelector('[name=email]').value || '';
+        var contactNumber = e.target.closest('form').querySelector('[name=contact-number]').value || '';
+        var publicAddress = e.target.closest('form').querySelector('[name=public-address]').value || '';
+        var subject = e.target.closest('form').querySelector('[name=subject]').value || '';
+        var message = e.target.closest('form').querySelector('[name=message]').value || '';
+        let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-        document.getElementById("error-msg").style.opacity = 0;
-        document.getElementById('error-msg').innerHTML = "";
-        if (name == "" || name == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Name*</div>";
-            fadeIn();
-            return false;
-        }
+        e.target.closest('form').querySelector('#error-msg').style.opacity = 0;
+        e.target.closest('form').querySelector('#error-msg').innerHTML = "";
+        e.target.closest('form').querySelector('#simple-msg').innerHTML = "";
+        // if (name == "" || name == null) {
+        //     e.target.closest('form').querySelector('#error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Name*</div>";
+        //     fadeIn(e);
+        //     return false;
+        // }
         if (email == "" || email == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Email*</div>";
-            fadeIn();
+            e.target.closest('form').querySelector('#error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Email*</div>";
+            fadeIn(e);
             return false;
         }
-        if (contactNumber == "" || contactNumber == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Contact Number*</div>";
-            fadeIn();
+        if (!email.match(regex)) {
+            e.target.closest('form').querySelector('#error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Valid Email*</div>";
+            fadeIn(e);
             return false;
         }
-        if (publicAddress == "" || publicAddress == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Public Address*</div>";
-            fadeIn();
-            return false;
-        }
-        if(!ethers.utils.isAddress(publicAddress)){
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Invalid Public Address*</div>";
-            fadeIn();
-            return false;
-        }
-        if (subject == "" || subject == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Subject*</div>";
-            fadeIn();
-            return false;
-        }
-        if (message == "" || message == null) {
-            document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Message*</div>";
-            fadeIn();
-            return false;
-        }
+        // if (contactNumber == "" || contactNumber == null) {
+        //     e.target.closest('form').querySelector('#error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Contact Number*</div>";
+        //     fadeIn(e);
+        //     return false;
+        // }
+        // if (publicAddress == "" || publicAddress == null) {
+        //     e.target.closest('form').querySelector('#error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Public Address*</div>";
+        //     fadeIn(e);
+        //     return false;
+        // }
+        // if(!ethers.utils.isAddress(publicAddress)){
+        //     e.target.closest('form').querySelector('#error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Invalid Public Address*</div>";
+        //     fadeIn(e);
+        //     return false;
+        // }
+        // if (subject == "" || subject == null) {
+        //     e.target.closest('form').querySelector('#error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Subject*</div>";
+        //     fadeIn(e);
+        //     return false;
+        // }
+        // if (message == "" || message == null) {
+        //     e.target.closest('form').querySelector('#error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please Enter Message*</div>";
+        //     fadeIn(e);
+        //     return false;
+        // }
 
         // document.getElementById("send-message-form").submit()
-        const sendMessageBtn = document.getElementById("send-message-btn");
+        const sendMessageBtn = e.target.closest(".send-message-btn");
         sendMessageBtn.disabled = true;
-        document.getElementById("simple-msg").innerHTML = "<div class='alert alert-blue info_message'>Sending</div>";
+        e.target.closest('form').querySelector('#simple-msg').innerHTML = "<div class='alert alert-blue info_message'>Sending</div>";
 
         fetch('/sendMail', {
-            method : "POST",
-            body: new FormData(document.getElementById("send-message-form")),
+            method: "POST",
+            body: new FormData(e.target.closest('form')),
         }).then(
             response => {
-                document.getElementById("simple-msg").innerHTML = "<div class='alert alert-success success_message'>Sent Successfully</div>";
-                document.forms["myForm"]["name"].value = "";
-                document.forms["myForm"]["email"].value = "";
-                document.forms["myForm"]["contact-number"].value = "";
-                document.forms["myForm"]["public-address"].value = "";
-                document.forms["myForm"]["subject"].value = "";
-                document.forms["myForm"]["message"].value = "";
+                e.target.closest('form').querySelector('#simple-msg').innerHTML = "<div class='alert alert-success success_message'>Sent Successfully</div>";
+                e.target.closest('form').querySelector('[name=name]').value = "";
+                e.target.closest('form').querySelector('[name=email]').value = "";
+                e.target.closest('form').querySelector('[name=contact-number]').value = "";
+                e.target.closest('form').querySelector('[name=public-address]').value = "";
+                e.target.closest('form').querySelector('[name=subject]').value = "";
+                e.target.closest('form').querySelector('[name=message]').value = "";
                 sendMessageBtn.disabled = false;
             }
         );
     }
 
-    function fadeIn() {
-        var fade = document.getElementById("error-msg");
+    function fadeIn(e) {
+        var fade = e.target.closest('form').querySelector('#error-msg');
         var opacity = 0;
         var intervalID = setInterval(function () {
             if (opacity < 1) {
@@ -297,12 +304,12 @@ try {
 }
 
 
-window.addEventListener('click',(e)=>{
-    if(e.target.id == 'send-message-btn'){
+window.addEventListener('click', (e) => {
+    if (e.target.closest('.send-message-btn')) {
         e.preventDefault();
-        validateForm();
+        validateForm(e);
     }
-    else if(e.target.id == 'public-address-submit-btn'){
+    else if (e.target.id == 'public-address-submit-btn') {
         e.preventDefault();
         const publicAddressSubmitBtn = e.target;
         publicAddressSubmitBtn.disabled = true;

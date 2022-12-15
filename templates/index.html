@@ -1,17 +1,13 @@
 {% extends "layout.html" %}
 {% block title %}{{ title }}{% endblock %}
 
-{% block navTextColor_class %}nav-light{% endblock %}
-
 {% block logo %}
 <a class="logo" href="/">
-    <span class="logo-light-mode">
-        <img src="{{ url_for('static', filename='images/logo-dark.png') }}" class="l-dark" height="24" alt="">
-        <img src="{{ url_for('static', filename='images/logo-light.png') }}" class="l-light" height="24" alt="">
-    </span>
+    <img src="{{ url_for('static', filename='images/logo-dark.png') }}" height="24" class="logo-light-mode" alt="">
     <img src="{{ url_for('static', filename='images/logo-light.png') }}" height="24" class="logo-dark-mode" alt="">
 </a>
 {% endblock %}
+
 
 {% block body %}
 <!-- Hero Start -->
@@ -21,7 +17,7 @@
             <div class="col-lg-10">
                 <div class="title-heading text-center">
                     <img src="{{ url_for('static', filename='images/crypto.svg') }}" height="136" class="mover" alt="">
-                    <h1 class="heading text-primary text-shadow-title mt-4 mb-5">Know Your Token's Best Yields!</h1>
+                    <h1 class="heading text-primary text-shadow-title mt-4 mb-5">See Higher Yields for Your Tokens!</h1>
                 </div>
                 <div class="text-center subcribe-form mt-4 pt-2">
                     <form action="/apiCall" method="get">
@@ -86,8 +82,8 @@
                 </div>
 
                 <div class="text-center mt-4">
-                    <a class="text-muted" href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        Contact Advisor <i class="uil uil-arrow-right"></i>
+                    Contact us to <a class="text-primary" href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        increase your yields  <i class="uil uil-arrow-right"></i>
                     </a>
                 </div>
             </div><!--end col-->
@@ -111,7 +107,7 @@
             <div class="col-lg-7 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                 <div class="section-title ms-lg-5">
                     <h4 class="title mt-3 mb-4">Who we are?</h4>
-                    <p class="text-muted para-desc">A few years ago a group of friends began comparing notes about the quality of advice they were receiving from financial services providers about their cryptocurrency assets. What started as conversations looking to solve complex tax, regulatory and financial wellbeing issues, led to the realization that the kind of firm they were looking for simply did not exist. So they decided to build it.</p>
+                    <p class="text-muted para-desc">A few years ago a group of friends began comparing notes on the quality of advice they were receiving from financial services providers about their cryptocurrency assets. What started as conversations looking to solve complex tax, regulatory and financial wellbeing issues, led to the realization that the kind of firm they were looking for simply did not exist. So they decided to build it.</p>
 
                     <div class="mt-4">
                         <a href="/about" class="btn btn-primary">More About</a>

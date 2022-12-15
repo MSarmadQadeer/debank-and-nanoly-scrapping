@@ -31,7 +31,7 @@
     <!-- Loader -->
     
     <!-- Navbar STart -->
-    <header id="topnav" class="defaultscroll sticky {% block navBg_class %}{% endblock %}">
+    <header id="topnav" class="defaultscroll sticky {% block navBg_class %}{% endblock %} bg-white">
         <div class="container">
             <!-- Logo container-->
             {% block logo %}{% endblock %}
@@ -54,9 +54,8 @@
             <!--Login button Start-->
             <ul class="buy-button list-inline mb-0">
                 <li class="list-inline-item mb-0">
-                    <a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <div class="login-btn-primary"><span class="btn btn-icon btn-pills btn-soft-primary"><i data-feather="settings" class="fea icon-sm"></i></span></div>
-                        <div class="login-btn-light"><span class="btn btn-icon btn-pills btn-light"><i data-feather="settings" class="fea icon-sm"></i></span></div>
+                    <a class="btn btn-primary" href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        Know Your Best Yields
                     </a>
                 </li>
             </ul>
@@ -67,8 +66,7 @@
                 <ul class="navigation-menu nav-right {% block navTextColor_class %}{% endblock %}">
                     <li><a href="/" class="sub-menu-item">Home</a></li>
                     <li><a href="/about" class="sub-menu-item"> About Us</a></li>
-                    <li><a href="/trust" class="sub-menu-item">Trust</a></li>
-                    <li><a href="/insights" class="sub-menu-item me-5">Insights</a></li>    
+                    <li><a href="/trust" class="sub-menu-item">Trust</a></li> 
                 </ul><!--end navigation menu-->
             </div><!--end navigation-->
         </div><!--end container-->
@@ -77,6 +75,120 @@
     
     {% block body %}{% endblock %}
 
+    <!-- Contact Start -->
+    <section class="section pt-0" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title" data-aos="fade-up" data-aos-duration="1000">Get In Touch !</h4>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-lg-7 col-md-6 mt-4 pt-2 order-1 order-md-2">
+                    <div class="title-heading ms-lg-4">
+                        <h4 class="mb-4" data-aos="fade-up" data-aos-duration="1000">Join the first crypto wealth management firm</h4>
+                        <p class="text-muted" data-aos="fade-up" data-aos-duration="1400">Your cryptocurrency assets are under more pressure than ever and your time is precious. Start drawing on our 20 years of experience working with the world’s leading businesses, entrepreneurs and institutions to advance your own success.</p>
+                        <div class="card border-0 bg-transparent">
+                            <div class="card-body p-0">
+                                <h6>Please send us your contact details, questions or requests:</h6>
+                                <ul class="text-muted">
+                                    <li>Use our free tools and warnings to instantly increase yields of the tokens you are holding.</li>
+                                    <li>Start optimizing your portfolio with your own dedicated, specialist Discretionary Wealth Manager.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-lg-5 col-md-6 mt-4 pt-2 order-2 order-md-1">
+                    <div class="card rounded shadow border-0" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="card-body">
+                            <div class="custom-form bg-white">
+                                <form>
+                                    <p id="error-msg" class="mb-0"></p>
+                                    <div id="simple-msg"></div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Your Name</label>
+                                                <div class="form-icon position-relative">
+                                                    <i data-feather="user" class="fea icon-sm icons"></i>
+                                                    <input name="name" id="name2" type="text" class="form-control ps-5" placeholder="Name :">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Your Contact</label>
+                                                <div class="form-icon position-relative">
+                                                    <i data-feather="phone" class="fea icon-sm icons"></i>
+                                                    <input name="contact-number" type="number" class="form-control ps-5" placeholder="Contact :">
+                                                </div>
+                                            </div> 
+                                        </div><!--end col-->
+
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Your Email <span class="text-danger">*</span></label>
+                                                <div class="form-icon position-relative">
+                                                    <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                    <input name="email" id="email2" type="email" class="form-control ps-5" placeholder="Email :">
+                                                </div>
+                                            </div> 
+                                        </div><!--end col-->
+
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Your Public Address</label>
+                                                <div class="form-icon position-relative">
+                                                    <i data-feather="dollar-sign" class="fea icon-sm icons"></i>
+                                                    <input name="public-address" class="form-control ps-5" placeholder="Public Address :" value="{{ publicAddress }}">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+    
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Subject</label>
+                                                <div class="form-icon position-relative">
+                                                    <i data-feather="book" class="fea icon-sm icons"></i>
+                                                    <input name="subject" id="subject" class="form-control ps-5" placeholder="subject :">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+    
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Your Message</label>
+                                                <div class="form-icon position-relative">
+                                                    <i data-feather="message-circle" class="fea icon-sm icons clearfix"></i>
+                                                    <textarea name="message" rows="4" class="form-control ps-5" placeholder="Message :"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="d-grid">
+                                                <button type="submit" class="btn btn-primary send-message-btn">Send Message</button>
+                                            </div>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </form><!--end form--> 
+                            </div><!--end custom-form-->
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end contact-->
+    </section><!--end section-->
+    <!-- Contact End -->
+    
     <!-- Footer Start -->
     <footer class="footer">
         <div class="container">
@@ -97,13 +209,12 @@
                                     <li><a href="/" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Home</a></li>
                                     <li><a href="/about" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> About Us</a></li>
                                     <li><a href="/trust" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Trust</a></li>
-                                    <li><a href="/insights" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Insights</a></li>
                                 </ul>
                             </div><!--end col-->
         
                             <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0 ms-auto">
-                                <h5 class="text-light footer-head">Know your token's best yields!</h5>
-                                <small class="d-block"><a href="#" class="text-foot fw-medium" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Contact Advisor <i class="uil uil-arrow-right"></i></a></small>
+                                <h5 class="text-light footer-head">Request Contact from an Advisor</h5>
+                                <small class="d-block"><a href="#" class="text-foot fw-medium" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Contact us <i class="uil uil-arrow-right"></i></a></small>
                             </div><!--end col-->
                         </div><!--end row-->
                     </div>
@@ -137,7 +248,12 @@
         <div class="offcanvas-body p-4">
             <div class="row">
                 <div class="col-12">
-                    <img src="{{ url_for('static', filename='images/contact.svg') }}" class="img-fluid d-block mx-auto" style="max-width: 256px;" alt="">
+                    <h6 class="fw-bold">Contact us to optimize your yields</h6>
+                    <ul>
+                        <li>Get a dedicated Wealth Manager</li>
+                        <li>Use free tools to increase returns</li>
+                        <li>Draw on our crypto expertise</li>
+                    </ul>
                     <div class="card border-0 mt-5" style="z-index: 1">
                         <div class="card-body p-0">
                             <form method="post" name="myForm" id="send-message-form" action="/sendMail">
@@ -156,7 +272,7 @@
 
                                     <div class="col-12">
                                         <div class="mb-3">
-                                            <label class="form-label">Your Email</label>
+                                            <label class="form-label">Your Email <span class="text-danger">*</span></label>
                                             <div class="form-icon position-relative">
                                                 <i data-feather="mail" class="fea icon-sm icons"></i>
                                                 <input name="email" type="email" class="form-control ps-5" placeholder="Email :">
@@ -207,7 +323,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="d-grid">
-                                            <button type="submit" id="send-message-btn" class="btn btn-primary">Send Message</button>
+                                            <button type="submit" class="btn btn-primary send-message-btn">Send Message</button>
                                         </div>
                                     </div><!--end col-->
                                 </div><!--end row-->
