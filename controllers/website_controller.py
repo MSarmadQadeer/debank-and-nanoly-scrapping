@@ -3,13 +3,14 @@ from flask import render_template, request, redirect
 from flask_mail import Mail, Message
 from scrapper.scrapper import getScrappedData
 from eth_utils import is_hex_address
+import os
 
 
 # Email Configuration
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'nadim.hafez@gmail.com'
-app.config['MAIL_PASSWORD'] = 'mvpbdxtmcctiwpyf'
+app.config['MAIL_SERVER'] = os.getenv('SERVER')
+app.config['MAIL_PORT'] = os.getenv('PORT')
+app.config['MAIL_USERNAME'] = os.getenv('USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('PASSWORD')
 app.config['MAIL_USE_TLS'] = True
 # app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -84,8 +85,8 @@ def sendMail():
         baseUrl = '/'.join(baseUrl)
         # print("Base url: ", baseUrl)
 
-        msg = Message(subject, sender='info@iqcapital.io',
-                    recipients=['marketing@iqcapital.io'])
+        msg = Message(subject, sender=os.getenv('SENDER'),
+                    recipients=[os.getenv('RECEIVER')])
 
         msg.html = render_template("email-template.html", name=name, email=email, message=message,
                                 publicAddress=publicAddress, contact=contact, baseUrl=baseUrl)  # Template should be in 'templates' folder
