@@ -1,6 +1,6 @@
 # DeBank & Nanoly Scrapping
 
-A web platform that tells you about your token's best yield based on your public address. The web application is named ad IQCapital.
+A web platform that tells you about your token's best yield based on your public address. The web application is named as IQCapital.
 
 The web application is live at [https://iqcapital.io](https://iqcapital.io)
 
