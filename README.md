@@ -4,9 +4,9 @@ A web platform that tells you about your token's best yield based on your public
 
 The web application is live at [https://iqcapital.io](https://iqcapital.io)
 
-## Project Mockup
+## Project Showcase
 
-![showcase image](./static/images/showcase.png)
+![Showcase image](./static/images/showcase.png)
 
 ## Pre-requisites
 
